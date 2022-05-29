@@ -1,0 +1,17 @@
+.mystyle {
+    width: 300px;
+    height: 50px;
+    background-color: coral;
+    color: white;
+    font-size: 25px;
+}
+
+.newClassName {
+    width: 400px;
+    height: 100px;
+    background-color: lightblue;
+    text-align: center;
+    font-size: 25px;
+    color: navy;
+    margin-bottom: 10px;
+}

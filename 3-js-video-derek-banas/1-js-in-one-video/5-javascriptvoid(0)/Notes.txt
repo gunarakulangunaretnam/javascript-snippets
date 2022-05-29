@@ -1,0 +1,7 @@
+01.JavaScript:void(0)
+
+<a href="JavaScript:void(0)" onclick="fun1()">Start</a>
+
+*The JavaScript:void(0) is very important if you skip it 
+,the page will reload when you click the link.
+
