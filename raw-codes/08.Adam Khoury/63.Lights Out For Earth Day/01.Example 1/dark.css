@@ -1,0 +1,12 @@
+﻿body {
+
+
+    background-color:black;
+    color:white;
+    z-index:1;
+}
+
+#video {
+z-index:2;
+
+}

@@ -1,0 +1,6 @@
+01.window is the root object in javascript.
+02.We don't need to type window before the the next JS keyword because it's the root object.
+03.window contains everything about browser and javascript.
+04.window also contains document.
+05.document is the website source code.
+06.document contains <html></html> everything about the source code.

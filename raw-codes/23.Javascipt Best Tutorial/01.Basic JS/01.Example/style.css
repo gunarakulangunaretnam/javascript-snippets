@@ -1,0 +1,30 @@
+#head {
+
+    font-family:sans-serif;
+}
+
+
+ul {
+
+
+    width:200px;
+    font-family:sans-serif;
+}
+
+ul li {
+
+  
+    padding-bottom:10px;
+    border-bottom:1px solid black;
+    cursor:pointer;
+
+}
+
+.active {
+
+    background-color:green;
+
+}
+
+
+

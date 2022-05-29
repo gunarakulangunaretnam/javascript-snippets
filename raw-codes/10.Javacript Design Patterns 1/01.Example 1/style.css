@@ -1,0 +1,16 @@
+#box {
+
+    width:250px;
+    height:250px;
+    border:2px solid black;
+}
+
+    #box > img {
+    
+        width:250px;
+        height:250px;
+
+    
+    }
+
+

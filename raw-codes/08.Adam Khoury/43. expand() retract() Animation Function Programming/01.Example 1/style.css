@@ -1,0 +1,22 @@
+p {
+
+    padding:10px 20px;
+    background-color:#D9ECFF;
+
+}
+
+div.mydivs {
+
+    background:#97D6FB;
+    width:500px;
+    height:0;
+    overflow:hidden;
+
+}
+
+div.mydivs >p {
+
+   padding:4px 16px;
+   background:#97D6fb;
+
+}

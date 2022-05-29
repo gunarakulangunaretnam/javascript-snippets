@@ -1,0 +1,24 @@
+08.Object 2
+
+var batwing={
+	staus:"ready",
+	name:"Joker"
+	
+	
+}
+
+var utilities={
+	printer:function(tarObj){
+		
+		for(i in tarObj){
+			
+			document.write(tarObj[i]);
+			
+		}
+		
+		
+	}
+	
+}
+
+utilities.printer(batwing);

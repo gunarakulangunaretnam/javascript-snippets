@@ -1,0 +1,81 @@
+body {
+
+    margin:0;
+}
+
+div#myheader{
+
+    height:100px;
+    background:#D2E9FF;
+    border:1px solid #09F;
+
+}
+
+
+div#logo {
+
+    height:75px;
+    border:#09f 1px dashed; 
+    font-size:44px;
+    padding:0px 12px;
+}
+
+div#headermenusystem {
+
+    margin-left:16px;
+
+}
+
+div#headermenusystem > div {
+
+   float:left;
+   margin:0px 20px;
+
+
+}
+
+div.dropmenus {
+    display:none;
+    position: absolute;
+    top: 100px;
+    width: 120px;
+    background: #D2E9FF;
+    z-index: 2;
+    padding: 4px;
+    border: #0385cb 3px solid;
+    border-top: none;
+    -moz-border-radius: 0 0 8px 8px;
+    -webkit-border-radius: 0 0 8px 8px;
+    border-radius: 0 0 8px 8px;
+}
+
+    div.dropmenus > a {
+       
+        margin: 4px;
+        padding: 7px;
+        font-size: 14px;
+        text-decoration: none;
+        background: #E8E8E8;
+        border: #666 1px solid;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        color:#000;
+    }
+
+    
+    div.dropmenus > a:hover{
+       background:#fff;
+       border:#06f 1px solid;
+       color:#000;
+    }
+
+div#dropmenu1 {
+}
+
+div#dropmenu2 {
+}
+
+div#dropmenu3 {
+}
+

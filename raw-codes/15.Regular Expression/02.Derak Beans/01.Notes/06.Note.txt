@@ -1,0 +1,33 @@
+\d Represent any number.
+\D Represent anything but a number
+\s Represent any space
+\S Anything but a space
+\w any character
+\W Anything but a character
+
+
+Quantites
+
+? 0 or 1 repetitions
+* 0 or more repretitions
++ 1 or more repretitions
+
+. except one line
+
+
+We must be escaped follwing characters
+
+$
+.
+(
+)
+*
++
+?
+[
+]
+\
+^
+{
+}
+|

@@ -1,0 +1,11 @@
+04.Developer tool
+
+*Use developer tool(F12) console to check some values are true or false by using terrnary condition.
+
+Ex:1
+
+myres=(false) ? "truthy" : "Falsey";
+
+Ex:2
+
+myress=undefined ? "truthy" : "Falsey";

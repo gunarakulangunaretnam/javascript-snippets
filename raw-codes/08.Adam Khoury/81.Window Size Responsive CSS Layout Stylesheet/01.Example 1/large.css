@@ -1,0 +1,38 @@
+﻿#my_header{
+
+    background-color:#ccc;
+    width:1200px;
+    height:140px;
+    margin:0 auto;
+    font-size:36px;
+
+}
+
+#my_menu {
+
+    width:1200px;
+    height:36px;
+    margin:0 auto;
+    background-color:#CAE4FF;
+
+
+}
+
+#my_menu a {
+
+    float:left;
+    padding:8px 12px;
+    margin:0 4px;
+    background:#D7F1FF;
+
+}
+
+#my_content {
+   
+     clear:left;
+     width:1200px;
+     margin:20px auto;
+     font-size:16px;
+
+
+}

@@ -1,0 +1,23 @@
+div#wrap {
+
+    width:800px;
+    margin:0 auto;  /*This is the way to center any div in web page */
+
+
+}
+
+
+div#status {
+
+    position:fixed;
+    font-size:24px;
+
+}
+
+div.newData {
+
+    width:800px;
+    height:1500px;
+    background-color:red;
+
+}

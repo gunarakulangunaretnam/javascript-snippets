@@ -1,0 +1,12 @@
+div.rokets {
+
+    position:absolute;
+   left:0px;
+    background:url(s.png) no-repeat;
+    width:255px;
+    height:30px;
+    transition:left 0s linear 0s;
+
+}
+
+
