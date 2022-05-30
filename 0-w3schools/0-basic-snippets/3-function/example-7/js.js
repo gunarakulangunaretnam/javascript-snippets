@@ -1,25 +1,16 @@
-var add = (function () {
-    
-    var counter = 0;
+function findMax() {
 
-   
-    return function () {
+    var sum = 0;
 
-        return counter++;
+    for (i = 0; i < arguments.length; i++) {
+
+        
+        sum+=arguments[i]
 
     }
 
-
-})();
-
-
-window.onload = function () {
-
-    document.getElementById("click").onclick = counterUp;
-
+    return sum;
 }
 
-function counterUp() {
-
-    document.getElementById("dis").innerHTML = add();
-}
+var a = findMax(10, 2, 3, 06, 4, 4, 70);
+alert(a);

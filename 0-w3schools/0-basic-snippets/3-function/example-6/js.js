@@ -1,15 +1,30 @@
-window.onload = function () {
+function findMax() {
 
-    document.getElementById("click").onclick = fun;
+    var max = Infinity;
+    
+    for (i = 0; i < arguments.length; i++) {
+
+
+        if (arguments[i] < max) {
+
+            max = arguments[i];
+        }
+
+
+    }
+
+    return max;
 }
 
 
-var counter = 0;
+var a = findMax(10, 2, 3, 6, 5, 48, 6);
+alert(a);
 
-function fun() {
+var b = Infinity;
+var c = 40;
 
 
-    document.getElementById("dis").innerHTML = counter++;
+if (c < b) {
 
+    alert("yes");
 }
-

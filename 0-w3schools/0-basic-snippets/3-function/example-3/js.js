@@ -1,22 +1,19 @@
-function findMax() {
+function addTogether() {
 
-    var max = -Infinity;
+    var sum = 1000;
 
     for (i = 0; i < arguments.length; i++) {
 
-        if (arguments[i] > max) {
 
-            max = arguments[i];
+        sum = sum - arguments[i];
 
-
-        }
 
     }
 
-    return max;
+    return sum;
+
 }
 
-var a = findMax(10, 2, 3, 06, 4, 4, 70);
 
+var a = addTogether(10, 2, 3, 6, 5, 4, 8, 9, 7);
 alert(a);
-

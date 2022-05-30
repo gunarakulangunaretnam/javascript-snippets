@@ -1,16 +1,14 @@
-function findMax() {
+function myFun(a, b) {
 
-    var sum = 0;
 
-    for (i = 0; i < arguments.length; i++) {
+    return a * b;
 
-        
-        sum+=arguments[i]
 
-    }
-
-    return sum;
 }
 
-var a = findMax(10, 2, 3, 06, 4, 4, 70);
-alert(a);
+
+var newFun = myFun.toString();
+alert(typeof newFun);
+
+
+//We can also convert a function into a number types and string types.
