@@ -6,7 +6,6 @@ JavaScript is a dynamic computer programming language. It is lightweight and mos
 
 ![Banner Image](github-readme-contents/javascript-banner-image.jpg)
 
-
 ## Learning Resources
 
 1. [W3Schools Snippets](0-w3schools/)
