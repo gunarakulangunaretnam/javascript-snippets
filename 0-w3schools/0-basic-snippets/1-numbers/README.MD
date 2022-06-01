@@ -2,17 +2,6 @@
 
 ### Example 0
 
-#### JavaScript
-
-```JavaScript
-var num1 = 2;
-
-while (num1 != Infinity) {
-
-  var t= num1 *=num1;
-  document.write(t + "<br>");
-}
-````
 #### HTML
 
 ```HTML
@@ -37,6 +26,18 @@ while (num1 != Infinity) {
 
 </html>
 ```
+
+#### JavaScript
+
+```JavaScript
+var num1 = 2;
+
+while (num1 != Infinity) {
+
+  var t= num1 *=num1;
+  document.write(t + "<br>");
+}
+````
 
 ### Output
 
