@@ -2,24 +2,6 @@
 
 ### Example 0
 
-#### JavaScript
-
-```JavaScript
-function onoffSystem() {
-
-    var light = document.getElementById("light");
-
-    if (light.src.match("off")) {
-
-        light.src = "on.gif"
-
-    } else {
-
-        light.src = "off.gif";
-    }
-
-}
-````
 #### HTML
 
 ```HTML
@@ -44,25 +26,31 @@ function onoffSystem() {
 </html>
 ```
 
+#### JavaScript
+
+```JavaScript
+function onoffSystem() {
+
+    var light = document.getElementById("light");
+
+    if (light.src.match("off")) {
+
+        light.src = "on.gif"
+
+    } else {
+
+        light.src = "off.gif";
+    }
+
+}
+````
+
 ### Output
 
 ![Banner Image](github-content/example-0-output.gif/)
 
 ### Example 2
 
-#### JavaScript
-
-```JavaScript
-window.onload = function () {
-
-    document.getElementById("changeColor").onclick = function () { red() };
-}
-
-function red() {
-    document.getElementById("h1").style.color = "red";
-    document.getElementById("h1").style.fontSize = "5em";
-}
-````
 #### HTML
 
 ```HTML
@@ -92,11 +80,52 @@ function red() {
 </html>
 ```
 
+#### JavaScript
+
+```JavaScript
+window.onload = function () {
+
+    document.getElementById("changeColor").onclick = function () { red() };
+}
+
+function red() {
+    document.getElementById("h1").style.color = "red";
+    document.getElementById("h1").style.fontSize = "5em";
+}
+````
 ### Output
 
 ![Banner Image](github-content/example-1-output.gif/)
 
 ### Example 2
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Exercise</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+<body>
+
+ <input type="number" id="txt1" />
+    <input type="button" id="valid" value="Validate" />
+    <h1></h1>
+
+    <script src="js.js"></script>
+
+</body>    
+
+</html>
+```
 
 #### JavaScript
 
@@ -129,6 +158,13 @@ function inputSystem() {
     }
 }
 ````
+
+### Output
+
+![Banner Image](github-content/example-2-output.gif/)
+
+### Example 3
+
 #### HTML
 
 ```HTML
@@ -138,7 +174,7 @@ function inputSystem() {
 
     <head>
 
-        <title>Exercise</title>
+        <title>This is the title</title>
 
         <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -146,22 +182,16 @@ function inputSystem() {
 
 <body>
 
- <input type="number" id="txt1" />
+     <input type="text" id="txt1" />
     <input type="button" id="valid" value="Validate" />
     <h1></h1>
 
     <script src="js.js"></script>
 
-</body>    
+</body>      
 
 </html>
 ```
-
-### Output
-
-![Banner Image](github-content/example-2-output.gif/)
-
-### Example 3
 
 #### JavaScript
 
@@ -219,33 +249,6 @@ function inputSystem() {
     }
 }
 ````
-#### HTML
-
-```HTML
-<!DOCTYPE html>
-
-<html>
-
-    <head>
-
-        <title>This is the title</title>
-
-        <link rel="stylesheet" type="text/css" href="style.css">
-
-    </head>
-
-<body>
-
-     <input type="text" id="txt1" />
-    <input type="button" id="valid" value="Validate" />
-    <h1></h1>
-
-    <script src="js.js"></script>
-
-</body>      
-
-</html>
-```
 
 ### Output
 
