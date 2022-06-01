@@ -8,7 +8,7 @@ function fun() {
 
     var inp = document.forms["form1"]["text1"];
 
-    if (inp.validity.rangeOverflow) {
+    if (inp.checkValidity() == false) {
 
         alert(inp.validationMessage);
     } else {

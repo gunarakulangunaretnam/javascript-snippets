@@ -1,22 +1,11 @@
 window.onload = function () {
 
-    document.getElementById("btn1").onclick = fun;
+    document.forms.kuna.dis.onclick = function () { fun() };
 }
+
 
 function fun() {
 
-
-    var inp = document.forms["form1"]["text1"];
-
-    if (inp.checkValidity() == false) {
-
-        alert(inp.validationMessage);
-    } else {
-
-        alert("The Input is ok");
-    }
-
+    var inp = document.forms.kuna.txt.value;
+    alert(inp);
 }
-
-
-//The HTML 5 Constraint Validation API Automatically genarates Customs Errors.

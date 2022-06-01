@@ -10,7 +10,7 @@ function fun() {
 
     if (inp.validity.rangeOverflow) {
 
-        alert("Value is too large");
+        alert(inp.validationMessage);
     } else {
 
         alert("The Input is ok");
@@ -19,3 +19,4 @@ function fun() {
 }
 
 
+//The HTML 5 Constraint Validation API Automatically genarates Customs Errors.
