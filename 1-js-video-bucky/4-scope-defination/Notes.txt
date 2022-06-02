@@ -1,5 +1,0 @@
-01.Scope
-
-*Gobal scope is avaliable for all functions in your program.
-
-*local scope is only avaliable for a Particular function in your program.
