@@ -1,4 +1,4 @@
-## 1. Function Basic Snippets
+## Function Basic Snippets
 
 ### Function 1
 
