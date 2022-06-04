@@ -252,4 +252,4 @@ alert((function(a,b){
 
 ### Output
 
-![Banner Image](github-content/example-2-5-output.gif/)
+![Banner Image](github-content/example-2-5-output.png/)
