@@ -13,6 +13,7 @@ JavaScript is a dynamic computer programming language. It is lightweight and mos
 3. [Bob Tabor Snippets](2-bob-tabor-snippets/)
 4. [Derek Banas Snippets](3-derek-banas-snippets/)
 5. [JS Advanced Snippets](4-javascript-advanced-snippets/)
+6. [Mixed Tutorials Snippets](5-mixed-tutorials-snippets/)
 
 
 Social Media Links
