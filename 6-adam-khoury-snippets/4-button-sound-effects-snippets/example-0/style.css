@@ -1,0 +1,30 @@
+nav{
+    
+    margin-top: 24px;
+    
+}
+
+nav > a{
+    
+    text-decoration: none;
+    padding: 10px;
+    background-color: lightblue;
+    border-radius: 5px;
+    font-family: sans-serif;
+    color: black;
+        
+    
+    
+}
+
+nav > a:hover{
+    
+    background-color: aquamarine;
+}
+
+nav > a:active{
+    
+    background-color: aliceblue;
+    color: red;
+    
+}

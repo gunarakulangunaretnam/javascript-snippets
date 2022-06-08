@@ -1,0 +1,39 @@
+body {
+
+    margin:0;
+    text-align:center;
+}
+
+#pagetop {
+
+    position:fixed;
+    top:0;
+    width:100%;
+    height:120px;
+    background:#06c;
+    color:#fff;
+    font-size:23px;
+    padding-top:50px;
+    transition:height 0.3s linear 0s, padding-top 0.3s linear 0s;
+    overflow:hidden;
+}
+
+
+#menu{
+
+    position:absolute;
+    bottom:0px;
+    width:100%;
+    background:#004A95;
+    height:50px;
+    transition:height 0.3s linear 0s;
+
+}
+
+
+#wraper {
+
+    margin-top:230px;
+
+
+}

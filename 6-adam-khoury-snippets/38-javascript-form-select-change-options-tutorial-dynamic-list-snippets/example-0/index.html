@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        
+        <title>This is the title</title>
+        
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+		
+  
+  
+    </head>
+    
+    
+<body>
+
+
+
+    <h1>Choose Your Car</h1>
+
+    <hr />
+
+    Choose Car Make:
+
+    <select id="slct1" name="slct1" onchange="populate(this.id, 'slct2')"> <!-- The this.id represents the 'slct1' or we can directly give it  -->
+
+        <option value=""></option> <!--I Put First Value as empty-->
+        <option value="Chevy">Chevy</option>
+        <option value="Dodge">Dodge</option>
+        <option value="Ford">Ford</option>
+
+    </select>
+
+
+    Choose Car Modal:
+    <select id="slct2" name="slct2"></select>
+
+     
+
+  
+
+
+
+
+
+    <script src="js.js"></script>
+
+
+
+
+</body>
+        
+        
+    
+</html>

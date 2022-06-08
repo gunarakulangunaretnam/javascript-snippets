@@ -1,0 +1,13 @@
+#peekaboo {
+
+    position:fixed;
+    bottom:0;
+    right:-352px;/* To hide the box*/
+    background:#c4e6ff;
+    padding:25px;
+    width:300px;
+    height:200px;
+    font-size:48px;
+
+
+}
