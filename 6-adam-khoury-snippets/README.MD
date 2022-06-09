@@ -1282,7 +1282,7 @@ function sliderFun1() {
 
 ![Banner Image](github-content/example-3-1-output.gif/)
 
-## 5. Putton Sound Effects Snippets
+## 5. Button Sound Effects Snippets
 
 ### Example 0
 
@@ -1538,3 +1538,589 @@ function loadContent(num){
 ### Output
 
 ![Banner Image](github-content/example-4-2-output.gif/)
+
+## 6.Change Style Sheet Snippets
+
+### Example 0
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link id="pageStyle" rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+    <body>
+
+        <nav>
+
+            <input type="button" onclick="swapStyleSheet('dark.css')" value="Dark style sheet">
+             <input type="button" onclick="swapStyleSheet('blue.css')" value="Dark style sheet">
+             <input type="button" onclick="swapStyleSheet('style.css')" value="Default style sheet">
+
+        </nav>
+
+		<h1 id="dis"></h1>
+
+          <script src="js.js"></script>
+
+    </body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+body{
+
+	background-color:green;
+
+}
+```
+```CSS
+body{
+
+	background-color:blue;
+
+}
+```
+```CSS
+body{
+
+	background-color:black;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+function swapStyleSheet(sheet) {
+
+    document.getElementById("pageStyle").href = sheet;
+}
+```
+
+### Output
+
+![Banner Image](github-content/example-5-0-output.gif/)
+
+## 7. Click Outside Close Menu Box Snippets
+
+### Example 0
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+    <body>
+
+      <div id="box">
+
+          <h1>This is JokerHacker</h1>
+          <p>KUna</p>
+      </div>
+
+        <button id="open">Open</button>
+
+          <script src="js.js"></script>
+
+    </body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#box {
+
+    width:500px;
+    height:500px;
+    border:2px solid black;
+    position:absolute;
+    top:0;
+    left:0;
+    display:none;
+    background-color:lightblue;
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = function () {
+
+    document.getElementById("open").onclick = boxFun;
+
+}
+var box = document.getElementById("box");
+
+function boxFun() {
+
+    box.style.display="block"
+
+}
+
+window.addEventListener("mouseup", function (event) {
+
+    if (event.target != box && event.target.parentNode!=box) {
+
+        box.style.display = 'none';
+    }
+})
+
+/*Notes
+
+*We must use mouseup for window.addEventListener becasue the event will apply to the window object.
+* if we add onclick it wont work.
+*/
+```
+
+### Output
+
+![Banner Image](github-content/example-6-0-output.gif/)
+
+### Example 1
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+    <body>
+
+        <div id="box1" class="boxes">
+
+            <h1>JokerHacker 1</h1>
+
+        </div>
+
+        <div id="box2" class="boxes">
+
+            <h1>JokerHacker 2</h1>
+
+        </div>
+
+        <div id="box3" class="boxes">
+
+            <h1>JokerHacker 3</h1>
+
+        </div>
+
+        <button id="btn1">Box1</button>
+        <button id="btn2">Box2</button>
+        <button id="btn3">Box3</button>
+          <script src="js.js"></script>
+
+    </body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+.boxes {
+
+
+    width:250px;
+    height:250px;
+    background-color:lightblue;
+    border:2px solid black;
+    position:absolute;
+    display:none;
+
+}
+
+#box1 {
+
+   top:100px;
+   left:0px;
+
+}
+
+#box2 {
+
+   top:100px;
+   left:250px;
+
+}
+
+#box3 {
+
+   top:100px;
+   left:500px;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = function () {
+
+    document.getElementById("btn1").onclick = box1Fun;
+    document.getElementById("btn2").onclick = box2Fun;
+    document.getElementById("btn3").onclick = box3Fun;
+
+}
+
+var boxes = document.getElementsByClassName("boxes");
+
+function box1Fun() {
+
+    boxes[0].style.display = 'block';
+
+}
+
+function box2Fun() {
+
+    boxes[1].style.display = "block";
+}
+
+function box3Fun() {
+
+    boxes[2].style.display = 'block';
+
+}
+
+var boxesArr=['box1','box2','box3']
+
+window.addEventListener("mouseup", function (event) {
+
+    for (g = 0; g < boxesArr.length; g++) {
+
+        var box = document.getElementById(boxesArr[g]);
+
+        if (event.target != box &&event.target.parentNode!=box) {
+
+            box.style.display = "none";
+        }
+
+    }
+
+})
+
+/*Notes
+
+*We must use mouseup for window.addEventListener becasue the event will apply to the window object.
+* if we add onclick it wont work.
+*/
+```
+
+### Output
+
+![Banner Image](github-content/example-6-1-output.gif/)
+
+## 8. Custom Alert Box Snippets
+
+### Example 0
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+    <body>
+
+        <h1>Welcome to Joker Hacker place</h1>
+
+        <div id="dialogoverlay"></div>
+
+            <div id="dialogbox">
+
+                <div>
+
+                    <div id="dialogboxhead"></div>
+                    <div id="dialogboxbody"></div>
+                    <div id="dialogboxfoot"></div>
+
+                </div>
+
+            </div>
+
+        <button onclick="Alert.render('kuna')">Custom Alert Box</button>
+
+        <script src="js.js" type="text/javascript"></script>
+
+    </body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#dialogoverlay {
+display:none;
+opacity:0.8;
+position:fixed;
+top:0;
+left:0;
+background:#FFF;
+width:100%;
+z-index:10;
+
+}
+
+#dialogbox {
+
+    display:none;
+    position:fixed;
+    background:#000;
+    border-radius:7px;
+    width:550px;
+    z-index:10;
+  }
+
+    #dialogbox > div {
+
+        background:#FFF;
+        margin:8px;
+
+    }
+
+        #dialogbox > div >#dialogboxhead {
+
+            background:#666;
+            font-size:19px;
+            padding:10px;
+            color:#ccc;
+
+        }
+        #dialogbox > div #dialogboxbody {
+
+            background:#333;
+            padding:20px;
+            color:#fff;
+
+        }
+
+        #dialogbox > div #dialogboxfoot {
+
+            background:#666;
+            padding:10px;
+            text-align:right;
+
+        }
+```
+
+#### JavaScript
+
+```JavaScript
+
+function customAlert() {
+
+    this.render = function (dialog) {
+
+        var winW = window.innerWidth;
+        var winH = window.innerHeight;
+        var dialogboxoverlay = document.getElementById("dialogoverlay");//Obj reference of dialogoverlay.
+        var dialogbox = document.getElementById("dialogbox");//Obj reference of dialogbox.
+        dialogboxoverlay.style.display = "block";
+        dialogboxoverlay.style.height = winH + 'px';
+        dialogbox.style.left = (winW / 2) - (550 * 0.5) + "px" //This will center the box. 550 is the width of the dialog box.550 * 0.5 means 550 is devided by 2.
+        dialogbox.style.top = '100px';
+        dialogbox.style.display = "block";
+        document.getElementById("dialogboxhead").innerHTML="Acknowladge This Message"
+        document.getElementById("dialogboxbody").innerHTML = dialog;
+        document.getElementById("dialogboxfoot").innerHTML = '<button onclick="Alert.ok()">OK</button>'
+
+        if (dialog == undefined) {
+
+            document.getElementById("dialogboxbody").innerHTML = "";
+        }
+    }
+
+    this.ok = function () {
+
+        document.getElementById("dialogbox").style.display = "none";
+        document.getElementById("dialogoverlay").style.display = "none";
+
+    }
+}
+
+var Alert = new customAlert();
+```
+
+### Output
+
+![Banner Image](github-content/example-8-0-output.gif/)
+
+### Example 1
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+<body>
+
+    <h1>Welcome to Joker Hacker place</h1>
+
+    <div id="alertBoxBg"></div>
+
+    <div id="alertBox">
+
+        <div id="alertHead"></div>
+        <div id="alertBody"></div>
+        <div id="alertFoot"></div>
+
+    </div>
+
+    <input type="button" value="AlertBox" id="alertBox1"  />
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#alertBoxBg {
+
+    width:100%;
+
+    position:fixed;
+    top:0;
+    left:0;
+    background-color:white;
+    opacity:0.7;
+    height:100%;
+    display:none;
+
+}
+#alertBox {
+
+    width:700px;
+    padding:20px;
+    position:fixed;
+    top:200px;
+
+    left:300px;
+    background-color:black;
+    display:none;
+}
+
+    #alertBox #alertHead {
+
+        padding:10px;
+        background-color:#666;
+        text-align:center;
+        font-size:20px;
+        color:white;
+
+    }
+
+    #alertBox #alertBody {
+
+        padding:25px;
+        background-color:#333;
+        font-size:20px;
+        color:white;
+
+    }
+
+    #alertBox #alertFoot {
+
+        font-size:20px;
+        text-align:right;
+        padding:10px;
+         background-color:#666;
+
+    }
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = function () {
+
+    document.getElementById("alertBox1").onclick=function(){alertBox.render("JokerHacker")}
+}
+
+    function customDialogBox() {
+
+        this.render = function (msg) {
+
+            //Sets Objects References
+
+            var alertBoxBg = document.getElementById("alertBoxBg");
+            var alertBox = document.getElementById("alertBox");
+            alertBoxBg.style.display = "block";
+            alertBox.style.display = "block";
+            document.getElementById("alertHead").innerHTML = "Acknowladge This Massage";
+            document.getElementById("alertBody").innerHTML = msg;
+            document.getElementById("alertFoot").innerHTML = "<button onclick='alertBox.ok()'>OK</button>"
+
+        }
+
+        this.ok = function () {
+
+            document.getElementById("alertBoxBg").style.display = "none";
+            document.getElementById("alertBox").style.display = "none";
+
+        }
+    }
+
+    var alertBox = new customDialogBox("");
+```
+
+### Output
+
+![Banner Image](github-content/example-7-1-output.gif/)
