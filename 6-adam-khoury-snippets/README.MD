@@ -1986,7 +1986,7 @@ var Alert = new customAlert();
 
 ### Output
 
-![Banner Image](github-content/example-8-0-output.gif/)
+![Banner Image](github-content/example-7-0-output.gif/)
 
 ### Example 1
 
