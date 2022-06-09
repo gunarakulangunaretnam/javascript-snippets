@@ -2124,3 +2124,630 @@ window.onload = function () {
 ### Output
 
 ![Banner Image](github-content/example-7-1-output.gif/)
+
+## 9. Custom Confirm Box Snippets
+
+### Example 0
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+
+    <body>
+
+        <h1>Welcome to Joker Hacker place</h1>
+
+        <div id="dialogoverlay"></div>
+
+            <div id="dialogbox">
+
+                <div>
+
+                    <div id="dialogboxhead"></div>
+                    <div id="dialogboxbody"></div>
+                    <div id="dialogboxfoot"></div>
+
+                </div>
+
+            </div>
+
+        <p id="post_1">
+
+            This is Joker Hacker 1
+
+            <button onclick="comfirm.render('Delete Post?','delete_post','post_1')">Dlete</button>
+        </p>
+
+        <p id="post_2">
+
+            This is Joker Hacker 2
+
+            <button onclick="comfirm.render('Delete Post?','delete_post','post_2')">Dlete</button>
+        </p>
+
+        <script src="js.js" type="text/javascript"></script>
+
+    </body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#dialogoverlay {
+display:none;
+opacity:0.8;
+position:fixed;
+top:0;
+left:0;
+background:#FFF;
+width:100%;
+z-index:10;
+
+}
+
+#dialogbox {
+
+    display:none;
+    position:fixed;
+    background:#000;
+    border-radius:7px;
+    width:550px;
+    z-index:10;
+  }
+
+    #dialogbox > div {
+
+        background:#FFF;
+        margin:8px;
+
+    }
+
+        #dialogbox > div >#dialogboxhead {
+
+            background:#666;
+            font-size:19px;
+            padding:10px;
+            color:#ccc;
+
+
+        }
+        #dialogbox > div #dialogboxbody {
+
+            background:#333;
+            padding:20px;
+            color:#fff;
+
+        }
+
+        #dialogbox > div #dialogboxfoot {
+
+            background:#666;
+            padding:10px;
+            text-align:right;
+        }
+```
+
+#### JavaScript
+
+```JavaScript
+function deletePost(id) {
+
+    var db_id = id.replace('post_', "");
+    document.body.removeChild(document.getElementById(id));
+}
+
+function customComfirm() {
+
+    this.render = function (dialog,op,id) {
+
+        var winW = window.innerWidth;
+        var winH = window.innerHeight;
+        var dialogboxoverlay = document.getElementById("dialogoverlay");//Obj reference of dialogoverlay.
+        var dialogbox = document.getElementById("dialogbox");//Obj reference of dialogbox.
+        dialogboxoverlay.style.display = "block";
+        dialogboxoverlay.style.height = winH + 'px';
+        dialogbox.style.left = (winW / 2) - (550 * 0.5) + "px" //This will center the box. 550 is the width of the dialog box.550 * 0.5 means 550 is devided by 2.
+        dialogbox.style.top = '100px';
+        dialogbox.style.display = "block";
+        document.getElementById("dialogboxhead").innerHTML="Comfirm That Action"
+        document.getElementById("dialogboxbody").innerHTML = dialog;
+        document.getElementById("dialogboxfoot").innerHTML = '<button onclick="comfirm.yes(\'' + op + '\',\'' + id + '\')">Yes</button> <button onclick="comfirm.no()">No</button> ';
+
+    }
+
+    this.yes = function (op,id) {
+
+        if (op == "delete_post") {
+
+            deletePost(id);
+        }
+
+        document.getElementById("dialogoverlay").style.display = "none";
+        document.getElementById("dialogbox").style.display = "none";
+    }
+
+    this.no = function () {
+
+        document.getElementById("dialogoverlay").style.display = "none";
+        document.getElementById("dialogbox").style.display = "none";
+
+    }
+
+}
+
+var comfirm = new customComfirm();
+```
+
+### Output
+
+![Banner Image](github-content/example-8-0-output.gif/)
+
+### Example 1
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+    <body>
+
+        <h1>Welcome to Joker Hacker place</h1>
+
+        <div id="dialogoverlay"></div>
+
+            <div id="dialogbox">
+
+                <div>
+
+                    <div id="dialogboxhead"></div>
+                    <div id="dialogboxbody"></div>
+                    <div id="dialogboxfoot"></div>
+
+                </div>
+
+            </div>
+
+<h1 id="dis"></h1>
+
+        <button onclick="deletation.render()">Delete</button>
+
+        <script src="js.js" type="text/javascript"></script>
+
+    </body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#dialogoverlay {
+    display:none;
+opacity:0.8;
+position:fixed;
+top:0;
+left:0;
+background:#FFF;
+width:100%;
+z-index:10;
+height:100%;
+
+}
+
+#dialogbox {
+
+  display:none;
+    position:fixed;
+    background:#000;
+    border-radius:7px;
+    top:150px;
+    left:400px;
+    width:550px;
+    z-index:10;
+  }
+
+    #dialogbox > div {
+
+        background:#FFF;
+        margin:8px;
+
+    }
+
+        #dialogbox > div >#dialogboxhead {
+
+            background:#666;
+            font-size:19px;
+            padding:10px;
+            color:#ccc;
+
+        }
+        #dialogbox > div #dialogboxbody {
+
+            background:#333;
+            padding:20px;
+            color:#fff;
+
+        }
+
+        #dialogbox > div #dialogboxfoot {
+
+            background:#666;
+            padding:10px;
+            text-align:right;
+
+        }
+```
+
+#### JavaScript
+
+```JavaScript
+var namesArr = new Array("Kuna", "Rakulan", "Gta", "Joker", "Hacker");
+
+document.getElementById("dis").innerHTML = namesArr;
+
+
+function deleteArr() {
+
+    this.render = function () {
+
+
+        document.getElementById("dialogoverlay").style.display = "block";
+        document.getElementById("dialogbox").style.display = "block";
+        document.getElementById("dialogboxhead").innerHTML = "Comfirm That Action";
+        document.getElementById("dialogboxbody").innerHTML = "Do you like to remove the element form array";
+        document.getElementById("dialogboxfoot").innerHTML = "<button onclick='deletation.yes()'>Yes</button> <button onclick='deletation.no()'>No</button>";
+
+    }
+
+    this.yes = function () {
+        namesArr.pop();
+       var newarr= document.getElementById('dis').innerHTML = namesArr;
+       if (newarr.length == -0) {
+
+           document.getElementById("dis").innerHTML = "There is nothing to delete";
+       }
+        document.getElementById("dialogoverlay").style.display = "none";
+        document.getElementById("dialogbox").style.display = "none";
+
+    }
+
+    this.no = function () {
+
+        document.getElementById("dialogoverlay").style.display = "none";
+        document.getElementById("dialogbox").style.display = "none";
+
+    }
+}
+
+var deletation = new deleteArr();
+```
+
+### Output
+
+![Banner Image](github-content/example-8-1-output.gif/)
+
+## 10. Custom Prompt Box Snippets
+
+### Example 0
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+    <body>
+
+        <div id="dialogoverlay"></div>
+
+            <div id="dialogbox">
+
+                <div>
+
+                    <div id="dialogboxhead"></div>
+                    <div id="dialogboxbody"></div>
+                    <div id="dialogboxfoot"></div>
+
+                </div>
+
+            </div>
+
+        <h1 id="dis">Default text</h1>
+
+        <button onclick="Prompt.render('Type some text','changeText')">Change Text</button>
+        <button onclick="Prompt.render('Type some text','doSome')">Change Text</button>
+
+        <script src="js.js" type="text/javascript"></script>
+
+    </body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#dialogoverlay {
+display:none;
+opacity:0.8;
+position:fixed;
+top:0;
+left:0;
+background:#FFF;
+width:100%;
+z-index:10;
+
+}
+
+#dialogbox {
+
+    display:none;
+    position:fixed;
+    background:#000;
+    border-radius:7px;
+    width:550px;
+    z-index:10;
+  }
+
+    #dialogbox > div {
+
+        background:#FFF;
+        margin:8px;
+
+    }
+
+        #dialogbox > div >#dialogboxhead {
+
+            background:#666;
+            font-size:19px;
+            padding:10px;
+            color:#ccc;
+
+
+        }
+        #dialogbox > div #dialogboxbody {
+
+            background:#333;
+            padding:20px;
+            color:#fff;
+
+        }
+
+        #dialogbox > div #dialogboxfoot {
+
+            background:#666;
+            padding:10px;
+            text-align:right;
+
+        }
+
+```
+
+#### JavaScript
+
+```JavaScript
+function changeText(val) {
+
+    document.getElementById("dis").innerHTML = val;
+}
+
+
+function doSome(val) {
+
+    document.body.style.backgroundColor = val;
+}
+
+
+function customPrompt() {
+
+    this.render = function (dialog,func) {
+
+        var winW = window.innerWidth;
+        var winH = window.innerHeight;
+        var dialogboxoverlay = document.getElementById("dialogoverlay");//Obj reference of dialogoverlay.
+        var dialogbox = document.getElementById("dialogbox");//Obj reference of dialogbox.
+        dialogboxoverlay.style.display = "block";
+        dialogboxoverlay.style.height = winH + 'px';
+        dialogbox.style.left = (winW / 2) - (550 * 0.5) + "px" //This will center the box. 550 is the width of the dialog box.550 * 0.5 means 550 is devided by 2.
+        dialogbox.style.top = '100px';
+        dialogbox.style.display = "block";
+        document.getElementById("dialogboxhead").innerHTML = "A value is required";
+        document.getElementById("dialogboxbody").innerHTML = dialog;
+        document.getElementById("dialogboxbody").innerHTML += '<br><input type="text" id="prompt_value1">';
+        document.getElementById("dialogboxfoot").innerHTML = '<button onclick="Prompt.ok(\'' + func + '\')">OK</button> <button onclick="Prompt.cancel()">No</button> ';
+
+
+
+    }
+
+    this.ok = function (func) {
+
+        var prompt_value1 = document.getElementById("prompt_value1").value;
+        window[func](prompt_value1);
+
+        document.getElementById("dialogoverlay").style.display = "none";
+        document.getElementById("dialogbox").style.display = "none";
+    }
+
+    this.cancel = function () {
+
+        document.getElementById("dialogoverlay").style.display = "none";
+        document.getElementById("dialogbox").style.display = "none";
+
+    }
+
+}
+
+var Prompt = new customPrompt();
+
+```
+
+### Output
+
+![Banner Image](github-content/example-9-0-output.gif/)
+
+### Example 1
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+    <body>
+
+        <h1>This is jokerhacker</h1>
+
+
+        <div id="bg"></div>
+
+        <div id="box">
+
+            <div id="head"></div>
+            <div id="body"></div>
+            <div id="foot"></div>
+
+        </div>
+
+        <button id="changeBg">Change The background Color</button>
+
+        <script src="js.js" type="text/javascript"></script>
+
+    </body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#bg {
+width:100%;
+height:100%;
+background-color:white;
+opacity:0.7;
+position:fixed;
+top:0px;
+left:0px;
+display:none;
+
+}
+
+#box {
+
+    width:500px;
+    padding:5px;
+    background-color:black;
+    position:relative;
+    top:100px;
+    left:400px;
+    display:none;
+}
+#head {
+   padding:15px;
+   background-color:#666;
+   text-align:center;
+   color:white;
+   font-weight:bold;
+   font-size:19px;
+}
+
+#body {
+   padding:30px;
+   background-color:#333;
+   color:white;
+   font-size:16px;
+}
+#foot {
+
+   padding:15px;
+   background-color:#666;
+   text-align:right;
+   color:white;
+   font-weight:bold;
+   font-size:19px;
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = function () {
+
+    document.getElementById("changeBg").onclick = function () {prompt1.render() }
+}
+    function changeBg() {
+
+        this.render = function (val) {
+
+            document.getElementById("box").style.display = "block";
+            document.getElementById("bg").style.display = "block";
+            document.getElementById("head").innerHTML = "A value is required";
+            document.getElementById("body").innerHTML="Type color name ";
+            document.getElementById("body").innerHTML += "<input type='text' id='v1'>";
+            document.getElementById("foot").innerHTML = "<button onclick='prompt1.ok()'>OK</button><button onclick=prompt1.cancel()>Cancel</button>";
+
+        }
+
+        this.ok = function () {
+
+            var val = document.getElementById("v1").value;
+            document.body.style.backgroundColor = val;
+
+            document.getElementById("box").style.display = "none";
+            document.getElementById("bg").style.display = "none";
+        }
+        this.cancel = function () {
+                document.getElementById("box").style.display = "none";
+                document.getElementById("bg").style.display = "none";
+        }
+    }
+    var prompt1 = new changeBg();
+```
+
+### Output
+
+![Banner Image](github-content/example-9-1-output.gif/)
