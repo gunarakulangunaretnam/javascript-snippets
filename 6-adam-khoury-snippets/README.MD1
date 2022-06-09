@@ -1,0 +1,74 @@
+## 11. Custom Data Attribute Snippets
+
+### Example 0
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+    <body>
+
+        <div class="rokets" data-top="100" data-left="800" data-speed="3.5"></div>
+
+        <div class="rokets" data-top="200" data-left="800" data-speed="6.5"></div>
+
+        <script src="js.js" type="text/javascript"></script>
+
+    </body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+div.rokets {
+
+    position:absolute;
+   left:0px;
+    background:url(s.png) no-repeat;
+    width:255px;
+    height:30px;
+    transition:left 0s linear 0s;
+}
+```
+
+#### JavaScript
+
+```JavaScript
+var rocketTop, rocketLeft, rocketSpeed, rocketImgs
+
+window.onload = function () {
+
+    rocketImgs = document.querySelectorAll('div.rokets');
+
+    for (a = 0; a < rocketImgs.length; a++) {
+
+        rocketTop = rocketImgs[a].dataset.top;
+        rocketLeft = rocketImgs[a].dataset.left;
+        rocketSpeed = rocketImgs[a].dataset.speed;
+        rocketImgs[a].style.top = rocketTop + "px";
+        rocketImgs[a].style.webkitTransitionDuration = rocketSpeed + "s";
+        rocketImgs[a].style.left = rocketLeft+"px";
+    }
+}
+/*Notes
+*We can use data attribute for many differnt programs.
+ We do not have to use it only for activating rokets.This is an example.
+*/
+```
+
+### Output
+
+![Banner Image](github-content/example-10-0-output.gif/)
