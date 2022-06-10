@@ -1,0 +1,2 @@
+document.getElementById("dis").innerHTML = "JavaScript is Enabled because of that you can asscess anything in this page";
+//If the JavaScript is enabled the script will work.see the HTML for more details.

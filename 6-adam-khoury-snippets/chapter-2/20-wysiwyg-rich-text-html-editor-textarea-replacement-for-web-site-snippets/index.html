@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        
+        <title>This is the title</title>
+        
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+		
+  
+  
+    </head>
+    
+    
+<body onload="iFrameOn();">
+
+    <h2>My web application that intakes data from users</h2>
+
+    <form action="myFile.php" name="myform" id="myform" method="post">
+
+        <p>
+            Entry Titile<br />
+
+            <div id="wysiwyg_cp" style="padding:8px;width:700px;">
+
+                <input type="button" onclick="iBold()" value="B" />
+                <input type="button" onclick="iUnderline()" value="U" />
+                <input type="button" onclick="iItalic()" value="I" />
+                <input type="button" onclick="iFontSize()" value="Text Size" />
+                <input type="button" onclick="iFontColor()" value="Text Color" />
+                <input type="button" onclick="iHorizontalRule()" value="HR" />
+                <input type="button" onclick="iUnorderedList()" value="UL" />
+                <input type="button" onclick="iOrderedList()" value="OL" />
+                <input type="button" onclick="iLink()" value="Link" />
+                <input type="button" onclick="iUnLink()" value="UnLink" />
+                <input type="button" onclick="iImage()" value="Image" />
+
+
+            </div>
+
+            <input type="text" name="title" id="title" size="80" maxlength="80" />
+        </p>
+        <p>Entry Titile<br /><textarea style="display:none;" name="myTextArea" id="myTextArea" cols="100" rows="15"></textarea></p>.
+
+        <iframe name="richTextField" id="richTextField" style="border:#000000 1px solid;width:700px;height:300px"></iframe>
+        <br />
+
+        <input type="button" value="Submit Data" name="myBtn" onclick="javascript:submit_form();" />
+
+    </form>
+
+
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+        
+        
+    
+</html>

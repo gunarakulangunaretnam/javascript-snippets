@@ -1,0 +1,15 @@
+#videoPlayer{
+    
+    background-color: black;
+    width: 500px;
+    border: 10px solid gray;
+    
+}
+
+#videoControls{
+    
+    color: white;
+    padding: 10px;
+    background-color: gray;
+   
+}

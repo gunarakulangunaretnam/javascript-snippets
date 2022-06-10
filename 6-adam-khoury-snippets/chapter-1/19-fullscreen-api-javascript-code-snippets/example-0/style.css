@@ -1,0 +1,16 @@
+#icons > div {
+
+    display:inline-block;
+    border:1px solid #AAA;
+    padding:5px;
+
+}
+
+
+    #icons > div > b {
+    
+    display:block;
+    color:#06C;
+    font-size:50px;
+
+    }

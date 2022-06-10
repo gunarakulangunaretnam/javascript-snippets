@@ -1,0 +1,13 @@
+#videoPlayer{
+    
+    width: 500px;
+    background-color: black;
+    
+}
+#videoControler{
+    
+    background-color:black;
+    padding: 10px;
+    border: 1px solid white;
+    
+}

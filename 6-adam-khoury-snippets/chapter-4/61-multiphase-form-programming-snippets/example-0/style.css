@@ -1,0 +1,16 @@
+form#multiphase {
+
+    border:2px solid black;
+    padding:24px;
+    width:350px;
+
+
+}
+
+
+form#multiphase >#phase2,#phase3,#allData {
+    
+    display:none;
+
+
+}

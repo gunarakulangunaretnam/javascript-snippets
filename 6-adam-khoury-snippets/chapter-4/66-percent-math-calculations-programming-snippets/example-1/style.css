@@ -1,0 +1,21 @@
+div#bar1 {
+
+    width:500px;
+    height:40px;
+    background:#eee;
+
+
+}
+
+div#bar1 >div {
+
+   position:relative;/*This way we can access the position dynamically*/
+   width:3px;
+   height:40px;
+   background:#000;
+
+
+}
+
+
+

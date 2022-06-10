@@ -1,0 +1,12 @@
+var b=10;
+
+for(a=0;a<b;a--){
+	
+	
+}
+
+if(b==0){
+	
+	alert("shdjas");
+	http:re
+}
