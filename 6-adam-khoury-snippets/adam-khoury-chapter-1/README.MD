@@ -3296,3 +3296,610 @@ function checkAnswer() {
 ### Output
 
 ![Banner Image](github-content/example-15-0-output.gif/)
+
+
+## 17. Fat Arrow Functions Snippets
+
+### Example 0
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+<body>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### JavaScript
+
+```JavaScript
+var x = () =>{
+
+    alert("Hello");
+}
+
+x();
+
+/*
+* it reduce the code we need to write.
+* it returns automatically.
+*/
+```
+
+### Output
+
+![Banner Image](github-content/example-16-0-output.png/)
+
+### Example 1
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+<body>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### JavaScript
+
+```JavaScript
+/*
+var x=function(a){
+
+	return a;
+
+}
+*/
+
+var x=a=>a;
+
+alert(x("hai"));
+
+/*
+*This is arrow annonomous function with parameters.
+* we don't have to weite return statement because a returns automatically.
+* The first a is the parameter.
+*/
+```
+
+### Output
+
+![Banner Image](github-content/example-16-1-output.png/)
+
+### Example 2
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+<body>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### JavaScript
+
+```JavaScript
+var x=(a,b,c)=>a+b+c
+
+alert(x(1,2,3));
+
+/*
+
+*arrow function with more arguments.
+
+*tradition function
+
+var x=function(a,b,c){
+
+	return a+b+c;
+
+}
+*/
+```
+
+### Output
+
+![Banner Image](github-content/example-16-2-output.png/)
+
+### Example 3
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+<body>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### JavaScript
+
+```JavaScript
+//setTimeout(function(){alert("Normal Function")},2000); traditional function
+setTimeout(()=>{alert("arrow function")},2000);
+
+/*
+you can put {} brakets if you want or you don't have to put it.it will work fine even it doen't have it {};
+*/
+```
+
+### Output
+
+![Banner Image](github-content/example-16-3-output.png/)
+
+### Example 4
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+
+
+    </head>
+
+
+<body>
+
+
+   <h1 id="dis"></h1>
+
+
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+
+
+</html><!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+<body>
+
+   <h1 id="dis"></h1>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### JavaScript
+
+```JavaScript
+function Car(){
+
+	this.speed=0;
+
+	setInterval(()=>{
+
+		this.speed++;
+		document.getElementById("dis").innerHTML=this.speed;
+
+	},300)
+
+}
+var car1=new Car();
+```
+
+### Output
+
+![Banner Image](github-content/example-16-4-output.gif/)
+
+## 18. Fisher Yates Shuffle Modern Algorithm Snippets
+
+### Example 0
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+<body>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### JavaScript
+
+```JavaScript
+var arr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+var i = arr.length, j, temp;
+
+while (--i > 0) {
+
+    j = Math.floor(Math.random() * (i + 1));
+    temp = arr[j];
+    arr[j] = arr[i];
+    arr[i] = temp;
+}
+
+document.write(arr);
+```
+
+### Output
+
+![Banner Image](github-content/example-17-0-output.png/)
+
+### Example 1
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+<body>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### JavaScript
+
+```JavaScript
+var arr = ["A", "B", "C", "D", "E", "F", "G", "H"];
+
+Array.prototype.shuffle = function () {
+
+    var i = this.length, j, temp;
+
+    while (--i > 0) {
+
+        j = Math.floor(Math.random() * (i + 1));
+        temp = this[j];
+        this[j] = this[i];
+        this[i] = temp;
+
+    }
+    return this
+
+}
+
+arr.shuffle();
+
+document.write(arr);
+```
+
+### Output
+
+![Banner Image](github-content/example-17-1-output.png/)
+
+### Example 2
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+<body>
+
+    <p>The loop should interate over the array form back to front bypassing index 0.THe loop should run (array,length-1) times </p>
+    <p>Each loop pass generate a random number ranging between 0 and i</p>
+    <p>Each loop pass Swap index i value width value found at index j</p>
+
+    <div id="dev">
+
+        </div>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#icons > div {
+
+    display:inline-block;
+    border:1px solid #AAA;
+    padding:5px;
+
+}
+    #icons > div > b {
+
+    display:block;
+    color:#06C;
+    font-size:50px;
+
+    }
+```
+
+#### JavaScript
+
+```JavaScript
+var arr = ["A", "B", "C", "D", "E", "F", "G", "H"];
+
+var dev = document.getElementById("dev");
+
+var i = arr.length, j, temp;
+
+while (--i > 0) {
+
+    dev.innerHTML += "Affecting index position '+ "+i+" +' of the array";
+    dev.innerHTML += "--- generate a random number between 0 and " + i;
+    j = Math.floor(Math.random() * (i + 1));//Get random number ranging between 0 and (i+1).
+    dev.innerHTML += "---generated: " + j;
+    dev.innerHTML += "---Swap values found at index " + i + " and index " + j + " <br> ";
+    temp = arr[j];
+    arr[j] = arr[i];
+    arr[i] = temp;
+
+}
+document.write(arr);
+```
+
+### Output
+
+![Banner Image](github-content/example-17-2-output.png/)
+
+## 19. Flat Icons HTML Code Symbols Discovery Snippets
+
+### Example 0
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+<body>
+
+    <div id="icons">
+        <script>
+
+            for (i = 0; i < 20000; i++) {
+
+                document.write("<div>")
+                document.write("&amp;#" + i + ";");
+                document.write("<b>&#" + i + ";</b>");
+                document.write("</div>");
+
+            }
+
+			<!--we can change the ending value to get more symbols-->
+        </script>
+
+    </div>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#icons > div {
+
+    display:inline-block;
+    border:1px solid #AAA;
+    padding:5px;
+
+}
+    #icons > div > b {
+
+    display:block;
+    color:#06C;
+    font-size:50px;
+    }
+```
+
+### Output
+
+![Banner Image](github-content/example-18-0-output.gif/)
+
+## 20. Fullscreen API JavaScript Code Snippets
+
+### Example 0
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+<body>
+
+    <img src="a1.jpg"  id="img1"/>
+
+    <input type="button" onclick="fullScreenSystemFun()" value="Full Screen" />
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#icons > div {
+
+    display:inline-block;
+    border:1px solid #AAA;
+    padding:5px;
+
+}
+
+    #icons > div > b {
+
+    display:block;
+    color:#06C;
+    font-size:50px;
+    }
+```
+
+#### JavaScript
+
+```JavaScript
+var img=document.getElementById("img1")
+
+function fullScreenSystemFun() {
+
+    if (img.requestFullScreen) {
+
+        img.requestFullScreen();
+
+    } else if (img.webkitRequestFullScreen) {
+
+        img.webkitRequestFullScreen();
+
+    } else if (img.mozRequestFullScreen) {
+
+        img.mozRequestFullScreen();
+
+    }else if(img.msRequestFullScreen){
+
+		img.msRequestFullScreen();
+	}
+
+}
+```
+
+### Output
+
+![Banner Image](github-content/example-19-0-output.gif/)
