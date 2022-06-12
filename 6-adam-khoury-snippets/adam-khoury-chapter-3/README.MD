@@ -1936,7 +1936,7 @@ function fun2() {
 
 ### Output
 
-![Banner Image](github-content/example-53-3-output.png/)
+![Banner Image](github-content/example-52-3-output.gif/)
 
 ### Example 4
 
