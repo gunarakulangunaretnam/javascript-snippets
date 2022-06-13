@@ -1232,3 +1232,1366 @@ window.onscroll = yScrollHandler;
 ### Output
 
 ![Banner Image](github-content/example-65-0-output.gif/)
+
+## 67. Percent Math Calculations Programming Snippets
+
+### Example 0
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+<body>
+
+    <script src="js.js"></script>
+
+</body>
+
+</html>
+```
+
+#### JavaScript
+
+```JavaScript
+var price = 150;
+var sale = 25;
+var savings = (price * sale) / 100;
+var salePrice = price - savings;
+
+document.write("Original price $ " + price.toFixed(2) + "<br>");
+document.write("Sale: " + sale +"%"+ "<br>");
+document.write("Saving " + savings + "<br>");
+document.write("The salePrice " + salePrice);
+```
+
+### Output
+
+![Banner Image](github-content/example-66-0-output.png/)
+
+### Example 1
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+<body>
+
+  <div id="bar1">
+
+      <div></div>
+
+  </div>
+
+    <script src="js.js"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+div#bar1 {
+
+    width:500px;
+    height:40px;
+    background:#eee;
+
+}
+
+div#bar1 >div {
+
+   position:relative;/*This way we can access the position dynamically*/
+   width:3px;
+   height:40px;
+   background:#000;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+var bar1 = document.getElementById("bar1");
+var precent = 50;
+var newleft = Math.round(bar1.offsetWidth * precent) / 100;
+bar1.children[0].style.left = newleft+"px";
+```
+
+### Output
+
+![Banner Image](github-content/example-66-1-output.png/)
+
+### Example 2
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+<body>
+
+  <div id="bar1">
+
+      <div></div>
+
+  </div>
+
+    <script src="js.js"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+div#bar1 {
+
+    width:500px;
+    height:40px;
+    background:#eee;
+
+}
+
+div#bar1 >div {
+
+   position:relative;/*This way we can access the position dynamically*/
+   width:35px;
+   height:40px;
+   background:#000;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+var bar1 = document.getElementById("bar1");
+var precent = 50;
+var newleft = Math.round(bar1.offsetWidth * precent) / 100;
+bar1.children[0].style.left = newleft - bar1.children[0].offsetWidth / 2 + "px";//This code is center corrcetly even if the width of the div is heigh.
+```
+
+### Output
+
+![Banner Image](github-content/example-66-2-output.png/)
+
+### Example 3
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+<body>
+
+    <script src="js.js"></script>
+
+</body>
+
+</html>
+```
+
+#### JavaScript
+
+```JavaScript
+var v1 = 150;
+var v2 = 80;
+var diffPercent = (((v1 - v2) / v1) * 100).toFixed(2);
+document.write(v2 + " is " + diffPercent + " % samler than " + v1);
+```
+
+### Output
+
+![Banner Image](github-content/example-66-3-output.png/)
+
+## 68. Read Mouse Coordinates Position X and Y Snippets
+
+### Example 0
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+<body>
+
+    <h1>Document that reads mouse movement</h1>
+
+    <h2 id="result_x">0</h2>
+    <h2 id="result_y">0</h2>
+
+    <script src="js.js"></script>
+
+</body>
+
+</html>
+```
+
+#### JavaScript
+
+```JavaScript
+window.addEventListener("mousemove", readMouseMove);
+
+function readMouseMove(event) {
+
+    var resualtX = document.getElementById("result_x");
+    var resualtY = document.getElementById("result_y");
+
+    resualtX.innerHTML = event.clientX;
+    resualtY.innerHTML = event.clientY;
+
+}
+```
+
+### Output
+
+![Banner Image](github-content/example-67-0-output.gif/)
+
+## 69. Real Time Text Input Filter Tutorial Program Textarea Snippets
+
+### Example 0
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+<body>
+
+    <textarea id="ta" onkeyup="clean('ta')" onkeydown="clean('ta')"></textarea>
+
+    <script src="js.js"></script>
+
+</body>
+
+</html>
+```
+
+### Output
+
+![Banner Image](github-content/example-68-0-output.png/)
+
+### Example 1
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+<body>
+
+    <textarea id="ta" onkeyup="clean('ta')" onkeydown="clean('ta')"></textarea>
+
+    <script src="js.js"></script>
+
+</body>
+
+</html>
+```
+
+#### JavaScript
+
+```JavaScript
+function clean(e) {
+
+    var texts = document.getElementById(e);
+    var regExp = /[^a-z]/ig;//This line of code means we want to raplace everyting that is not these charactors.
+    texts.value = texts.value.replace(regExp, "");
+
+}
+```
+
+### Output
+
+![Banner Image](github-content/example-68-1-output.png/)
+
+### Example 2
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+<body>
+
+    <textarea id="ta" onkeyup="clean('ta')" onkeydown="clean('ta')"></textarea>
+
+    <script src="js.js"></script>
+
+</body>
+
+</html>
+```
+
+#### JavaScript
+
+```JavaScript
+function clean(e) {
+
+    var texts = document.getElementById(e);
+    var regExp = /[^a-z 0-9?!.,]/ig;//This line of code means we want to raplace everyting that is not these Characters.
+    texts.value = texts.value.replace(regExp, "");
+
+}
+```
+
+### Output
+
+![Banner Image](github-content/example-68-2-output.png/)
+
+### Example 3
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+       <style>
+
+	   </style>
+
+    </head>
+
+    <body>
+
+	  <textarea id="txt1" col="5" rows="5"></textarea>
+
+	<h1 id="display1"></h1>
+
+          <script src="js.js"></script>
+
+    </body>
+
+</html>
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload=function(){
+
+	document.getElementById("txt1").addEventListener("keydown",clearing);
+	document.getElementById("txt1").addEventListener("keyup",clearing);
+
+}
+
+function clearing(){
+
+	var textFiled=document.getElementById("txt1");
+	var regExp=/[^a-z 0-9]/gi;
+
+	if(textFiled.value.search(regExp)>-1){
+
+		document.getElementById("display1").innerHTML="We only allow [a-z,0-9]";
+		textFiled.value=textFiled.value.replace(regExp,"");
+	}
+
+}
+
+/*Notes
+*This is program only allow [a-z,0-9];
+*/
+```
+
+### Output
+
+![Banner Image](github-content/example-68-3-output.png/)
+
+## 70. Restrict Text Input Characters Snippets
+
+### Example 0
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+<body>
+
+    <input type="text" placeholder="Firstname" onkeyup="letteronly(this)" />
+    <input type="text" placeholder="Lasttname" onkeyup="letteronly(this)" />
+
+    <script src="js.js"></script>
+
+</body>
+
+</html>
+```
+
+#### JavaScript
+
+```JavaScript
+function letteronly(inputs) {
+
+    var regExps = /[^a-z]/gi;//This line of code means we want to raplace everyting that is not these Characters.
+    inputs.value = inputs.value.replace(regExps, "");
+
+}
+```
+
+### Output
+
+![Banner Image](github-content/example-69-0-output.png/)
+
+## 71. Smooth Auto Scroll Animation Snippets
+
+### Example 0
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+<body>
+
+    <h1 id="myheading">JavaScript Animated Scroll Tutorial</h1>
+
+    <a href="#" onclick="return false" onmousedown="autoScrollTo('div1')">Document Section 1</a><br />
+    <a href="#" onclick="return false" onmousedown="autoScrollTo('div2')">Document Section 2</a><br />
+    <a href="#" onclick="return false" onmousedown="autoScrollTo('div3')">Document Section 3</a><br />
+    <a href="#" onclick="return false" onmousedown="autoScrollTo('div4')">Document Section 4</a><br />
+
+    <div id="div1" class="contentBox">Div Content 1</div>
+
+    <a href="#" onclick="return false" onmousedown="resetScroller('myheading')">Go back to top</a>
+    <div id="div2" class="contentBox">Div Content 2</div>
+
+    <a href="#" onclick="return false" onmousedown="resetScroller('myheading')">Go back to top</a>
+
+    <div id="div3" class="contentBox">Div Content 3</div>
+
+    <a href="#" onclick="return false" onmousedown="resetScroller('myheading')">Go back to top</a>
+
+    <div id="div4" class="contentBox">Div Content 4</div>
+
+    <a href="#" onclick="return false" onmousedown="resetScroller('myheading')">Go back to top</a>
+
+       <!--Why i made the div onclick method as return false if the user clicks the link it will not put the # sign to the url -->
+    <script src="js.js"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+div.contentBox {
+
+    background:#fff;
+    height:500px;
+    margin:20px;
+    font-size:28px;
+    border:#ccc 1px dashed;
+}
+```
+
+#### JavaScript
+
+```JavaScript
+var scrollY = 0;
+var distance = 40;
+var speed = 25;
+
+function autoScrollTo(ele) {
+
+    var currentY = window.pageYOffset;//pageYOffset returns the exact number of scroll value.
+    var targetY = document.getElementById(ele).offsetTop//offsetTop means how far is form it's parent element.But in our case the parent element is the body element.we get pixls on it.
+    var bodyHeight = document.body.offsetHeight;
+    var yPos = currentY + window.innerHeight;
+
+    var animator = setTimeout('autoScrollTo(\''+ele+'\')', speed);//This setTimeout Method runs repetly many many times per seconds.This how aniamtion works in JavaScript.speed value is 25.1000 is one second.
+
+    if (yPos > bodyHeight) {//If the yPos is greter than the bodyHeight.clearTimeout
+
+        clearTimeout(animator);
+
+        //If the user hits the bottom of the page stop the setTimeout animator method.
+
+    } else {
+
+        if (currentY < targetY) {
+
+            scrollY = currentY + distance;//distance is the value every time it increments when the loop runs.
+            window.scroll(0, scrollY);
+
+        } else {//Once is gets there stop the animator.
+
+            clearTimeout(animator);
+
+        }
+
+    }
+
+}
+
+function resetScroller(ele) {
+
+    var currentY = window.pageYOffset;
+    var targetY = document.getElementById(ele).offsetTop;
+    var animator = setTimeout('resetScroller(\'' + ele + '\')', 10);
+
+    if (currentY > targetY) {
+
+        scrollY = currentY - distance;
+        window.scroll(0, scrollY);
+
+    } else {
+
+        clearTimeout(animator);
+
+    }
+
+}
+
+/*Notes
+ * y position is vertical
+ * x position is horzontail
+ */
+```
+
+### Output
+
+![Banner Image](github-content/example-70-0-output.gif/)
+
+## 72. Social Network Website Building Tutorial Series Snippets
+
+### Example 0
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="icon" type="image/x-icon" href="images/night-owl-75.gif" />
+
+    </head>
+
+<body>
+
+    <div id="pageTop">
+
+        <div id="pageTopWrap">
+
+            <div id="pageTopLogo">
+
+              <a href="www.webkids.com"><img src="images/night-owl-75.gif" alt="Logo" title="WebKids.com" /></a>
+
+            </div>
+
+            <div id="pageTopRest">
+
+                <div id="menu1">
+
+                    <div>
+                    <a href="#">Sign Up /Log In</a>
+
+                    </div>
+
+                </div>
+
+                <div id="menu2">
+                    <div>
+                        <a href="#">Home</a>
+                        <a href="#">About</a>
+                        <a href="#">Contect</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="pageMiddle"></div>
+    <div id="pageBottom">&copy; 2016 JokerHacker</div>
+
+    <script src="js.js"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+body {
+
+    margin:0;
+    font-family:Tahoma,GENUINE,sans-serif;
+    font-size:16px;
+
+}
+#pageTop {
+
+    height:90px;
+    background:url(images/jv0h.jpg) repeat-x;
+
+}
+
+#pageTop > #pageTopWrap {
+
+      height:90px;
+      margin:0 auto;
+      width:1000px;
+
+}
+
+#pageTop > #pageTopWrap #pageTopLogo {
+
+       width:108px;
+       height:90px;
+       float:left;
+
+}
+
+#pageTop > #pageTopWrap #pageTopLogo > a img {
+
+     margin-top:15px;
+
+}
+
+#pageTop > #pageTopWrap #pageTopRest {
+
+      float:left;
+      width:892px;
+      height:90px;
+
+}
+
+#pageTop > #pageTopWrap #pageTopRest >#menu1 {
+
+      height:44px;
+
+}
+
+#pageTop > #pageTopWrap #pageTopRest >#menu1  div{
+
+      margin-top:8px;
+      padding:4px;
+      text-align:right;
+
+}
+
+#pageTop > #pageTopWrap #pageTopRest >#menu1 div a {
+
+     color:lightgray;
+     text-decoration:none;
+
+}
+
+#pageTop > #pageTopWrap #pageTopRest >#menu1 div a:hover {
+
+   color:lawngreen;
+
+}
+
+#pageTop > #pageTopWrap #pageTopRest >#menu2 {
+
+      height:44px;
+
+}
+
+#pageTop > #pageTopWrap #pageTopRest >#menu2 div {
+
+      margin-top:8px;
+      padding:4px;
+
+}
+
+#pageTop > #pageTopWrap #pageTopRest >#menu2 div a {
+
+     color:lightgray;
+     text-decoration:none;
+     margin:0 24px;
+     display:block;
+     float:left;
+
+}
+
+#pageTop > #pageTopWrap #pageTopRest >#menu2 div a:hover {
+
+   color:lawngreen;
+
+}
+
+#pageMiddle {
+
+    height:900px;
+	margin:0 auto;
+	width:1000px;
+	background-color:#ccc;
+
+
+}
+
+#pageBottom {
+
+    background:#666;
+    padding:24px;
+    font-size:12px;
+    color:#ccc;
+    text-align:center;
+
+}
+```
+
+### Output
+
+![Banner Image](github-content/example-71-0-output.gif/)
+
+## 73. Start Stop CSS Sprite Keyframes Animation Snippets
+
+### Example 0
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+<body>
+
+    <div id="ball"></div>
+
+    <script src="js.js"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#ball {
+
+    background:url(ball.gif);
+    width:70px;
+    height:80px;
+
+}
+
+@keyframes ball-bounce {
+    from {
+        background-position: 0px;
+    }
+
+    to {
+        background-position:-300px;
+    }
+}
+
+@-moz-keyframes ball-bounce {
+     from {
+        background-position: 0px;
+    }
+
+    to {
+        background-position:-300px;
+    }
+}
+
+@-webkit-keyframes ball-bounce {
+     from {
+        background-position: 0px;
+    }
+
+    to {
+        background-position:-300px;
+    }
+}
+
+```
+
+#### JavaScript
+
+```JavaScript
+document.getElementById("ball").addEventListener("click", function () {
+
+    document.getElementById("ball").style.animation = "ball-bounce 0.7s steps(6) infinite";
+
+})
+```
+
+### Output
+
+![Banner Image](github-content/example-72-0-output.gif/)
+
+### Example 1
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+<body>
+
+    <div id="ball"></div>
+
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script src="js.js"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#ball {
+
+    background:url(ball.gif);
+    width:70px;
+    height:80px;
+
+}
+
+@keyframes ball-bounce {
+    from {
+        background-position: 0px;
+    }
+
+    to {
+        background-position:-300px;
+    }
+}
+
+@-moz-keyframes ball-bounce {
+     from {
+        background-position: 0px;
+    }
+
+    to {
+        background-position:-300px;
+    }
+}
+
+@-webkit-keyframes ball-bounce {
+     from {
+        background-position: 0px;
+    }
+
+    to {
+        background-position:-300px;
+    }
+}
+```
+
+#### JavaScript
+
+```JavaScript
+document.getElementById("start").addEventListener("click", function () {
+
+    document.getElementById("ball").style.animation = "ball-bounce 0.7s steps(6) infinite";
+
+});
+
+document.getElementById("stop").addEventListener("click", function () {
+
+    document.getElementById("ball").style.animation = "";
+})
+```
+
+### Output
+
+![Banner Image](github-content/example-72-1-output.gif/)
+
+## 74. Toggle Function Click Drop Down Menus CSS3 Snippets
+
+### Example 0
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+<body>
+
+    <div id="topbar">
+
+        <div id="logo">LOGO</div>
+
+        <div id="sections_btn_holder">
+
+            <button onclick="toggleNavPanel('section_panel1')">Navigator<span id="navarrow">&#9662</span></button>
+
+        </div>
+
+        <div id="section_panel1">
+            <div>
+                void is a unary operator that appears before its single operand, which may be of any
+                type. This operator is unusual and infrequently used: it evaluates its operand, then
+                discards the value and returns undefined. Since the operand value is discarded, using
+                the void operator makes sense only if the operand has side effects.
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js.js"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+body {
+
+    margin:0;
+    background:#999;
+}
+
+div#topbar {
+
+    background:-webkit-linear-gradient(#666,#000);
+    background:linear-gradient(#666,#000);
+    height:60px;
+
+}
+
+div#topbar #logo {
+
+   float:left;
+   width:140px;
+   height:35px;
+   margin:8px 0 0 30px;
+   font-size:36px;
+   color:#999;
+
+}
+
+div#topbar > #sections_btn_holder{
+
+  float:left;
+  width:144px;
+  height:46px;
+  padding-top:16px;
+
+}
+
+div#topbar > #sections_btn_holder > button{
+
+    background:#ff6a00;
+}
+
+div#topbar > #section_panel1{
+
+    position:absolute;
+    height:0;
+    width:550px;
+    background:#000;
+    top:60px;
+    left:160px;
+    border-radius:0 0 8px 8px;
+    overflow:hidden;
+    z-index:10000;/*To view this content to top*/
+    transition:height 0.3s linear 0s;
+
+}
+
+div#topbar > #section_panel1 > div{
+
+    background:#333;
+    padding:20px;
+    height:238px;
+    margin:10px;
+    color:#fc0;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+function toggleNavPanel(x) {
+
+    var panel = document.getElementById(x), navarrow = document.getElementById("navarrow"), maxH = "300px";
+
+    if (panel.style.height == maxH) {
+
+        panel.style.height = "0px";
+        navarrow.innerHTML = "&#9662";
+
+        /*
+         * if the panel is opened close it
+         *
+         */
+
+    } else {
+
+        panel.style.height = maxH;
+        navarrow.innerHTML = "&#9652";
+
+
+        /*
+         * if the panel is closed open it.
+         *
+         */
+    }
+}
+```
+
+### Output
+
+![Banner Image](github-content/example-73-0-output.gif/)
+
+## 75. Window Size Responsive CSS Layout Stylesheet Snippets
+
+### Example 0
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link id="styleSheets" rel="stylesheet" type="text/css" href="large.css">
+
+    </head>
+
+<body>
+
+    <div id="my_header"></div>
+
+    <div id="my_menu">
+
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Staff</a>
+        <a href="#">Contact</a>
+
+    </div>
+
+    <div id="my_content">
+
+        It's important to remember that a NAMED LAYER is addressed differently than
+        a NAMED INDIVIDUAL STYLE. With a NAMED LAYER, you do not have to use the
+        CLASS Attribute at all. You only use the ID Attribute to address or insert the NAMED
+        LAYER into an Element.
+        Technically you don't have to use the CLASS Attribute of an Element, even
+        when you are implementing a NAMED INDIVIDUAL STYLE; but in that case, you are
+        circumnavigating the intention of the NAMED INDIVIDUAL STYLE so that it is only
+        being used as a regular CLASS of STYLE instead of as an EXCEPTION to a CLASS of
+        STYLE. This defeats its intended purpose, but there's nothing wrong with it.
+        Note that the two different capitalizations of "Layer" and "LAYER" are only used
+        for emphasis purposes and should be, in all circumstances, considered interchangeable.
+        The only time that the spelling of "Layer" is critical is when using the "layers[i]" Array
+        in JavaScript code.
+
+    </div>
+
+    <script src="js.js"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#my_header{
+
+    background-color:#ccc;
+    width:1200px;
+    height:140px;
+    margin:0 auto;
+    font-size:36px;
+
+}
+
+#my_menu {
+
+    width:1200px;
+    height:36px;
+    margin:0 auto;
+    background-color:#CAE4FF;
+
+}
+
+#my_menu a {
+
+    float:left;
+    padding:8px 12px;
+    margin:0 4px;
+    background:#D7F1FF;
+
+}
+
+#my_content {
+
+     clear:left;
+     width:1200px;
+     margin:20px auto;
+     font-size:16px;
+
+}
+```
+
+```CSS
+#my_header{
+
+    background-color:#ccc;
+    width:100%;
+    height:40px;
+    margin:0 auto;
+    font-size:22px;
+
+}
+
+#my_menu {
+
+    float:left;
+    width:25%;
+    min-width:120px;
+    margin-right:2%;
+}
+
+#my_menu a {
+
+    display:block;
+    float:left;
+    padding:12px 8px;
+    background:#D7F1FF;
+    border-bottom:#ADE7ff 1px solid;
+
+}
+
+#my_content {
+
+     margin:20px auto;
+     font-size:20px;
+}
+```
+
+```CSS
+#my_header{
+
+    background-color:#ccc;
+    width:800px;
+    height:140px;
+    margin:0 auto;
+    font-size:36px;
+
+}
+
+#my_menu {
+
+    width:800px;
+    height:36px;
+    margin:0 auto;
+    background-color:#CAE4FF;
+
+}
+
+#my_menu a {
+
+    float:left;
+    padding:8px 12px;
+    margin:0 4px;
+    background:#D7F1FF;
+
+}
+
+#my_content {
+
+     clear:left;
+     width:800px;
+     margin:20px auto;
+     font-size:16px;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+function layoutHandler() {
+
+    var styleLink = document.getElementById("styleSheets");
+
+    if (window.innerWidth < 900) {//We can also use this.innerWidth
+
+        styleLink.setAttribute("href", "mobile.css");
+
+    } else if (window.innerWidth < 1200) {
+
+        styleLink.setAttribute("href", "mudium.css");
+
+    } else {
+
+        styleLink.setAttribute("href", "large.css");
+    }
+}
+
+layoutHandler();
+
+window.addEventListener("resize", layoutHandler);
+```
+
+### Output
+
+![Banner Image](github-content/example-74-0-output.gif/)
