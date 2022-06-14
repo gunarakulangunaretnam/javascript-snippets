@@ -15,6 +15,7 @@ JavaScript is a dynamic computer programming language. It is lightweight and mos
 5. [JS Advanced Snippets](4-javascript-advanced-snippets/)
 6. [Mixed Tutorials Snippets](5-mixed-tutorials-snippets/)
 7. [Adam Khoury Snippets](6-adam-khoury-snippets/)
+8. [Bingo Card](7-bingo-card/)
 
 Social Media Links
 ---
