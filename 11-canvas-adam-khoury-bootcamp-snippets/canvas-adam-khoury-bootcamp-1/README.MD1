@@ -1,0 +1,627 @@
+## 7. Shadows Snippets
+
+### Example 0
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+
+    </head>
+
+<body>
+
+ <canvas id="can1" width="500" height="500"></canvas>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#can1 {
+
+    background: white;
+      border:1px solid black;
+}
+
+body {
+
+    background-color:#666;
+   margin: 40px;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = draw;
+
+function draw() {
+
+   var ctx = document.getElementById("can1").getContext("2d");
+    //shadowColor=color | hex | rgba().a is alpha it means opacity.
+    //shadowOffsetX=positive or nagative number.
+    //shadowOffsetY=positive or nagative number.
+    //shadowBlur=positive number.
+
+   ctx.fillStyle = "yellow";
+   ctx.shadowColor = 'rgba(200,0,0,1)';//200 is the Maximum value.  1 is the tranparent it means the opacity.
+   ctx.shadowOffsetX = 5;//if you out -5 it will change the diraction.
+   ctx.shadowOffsetY = 5;//if you out -5 it will change the diraction.
+   ctx.shadowBlur = 3;
+   ctx.fillRect(200, 50, 100, 100);
+
+}
+```
+
+### Output
+
+![Banner Image](github-content/example-6-0-output.png/)
+
+## 8. Transformation Effects Snippets
+
+### Example 0
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+
+    </head>
+
+<body>
+
+ <canvas id="can1" width="500" height="500"></canvas>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#can1 {
+
+    background: white;
+      border:1px solid black;
+}
+
+body {
+
+    background-color:#666;
+   margin: 40px;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = draw;
+
+function draw() {
+
+    var ctx = document.getElementById("can1").getContext("2d");
+    ctx.fillStyle = "yellow";
+   ctx.fillRect(50, 50, 100, 100);
+   ctx.scale(0.5, 0.5);//Default scale is 1,1 that is x and y.
+   ctx.fillRect(500, 50, 100, 100);
+
+}
+```
+
+### Output
+
+![Banner Image](github-content/example-7-0-output.png/)
+
+### Example 1
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+
+    </head>
+
+<body>
+
+ <canvas id="can1" width="500" height="500"></canvas>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#can1 {
+
+    background: white;
+      border:1px solid black;
+}
+
+body {
+
+    background-color:#666;
+   margin: 40px;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = draw;
+
+function draw() {
+
+    var ctx = document.getElementById("can1").getContext("2d");
+    ctx.fillStyle = "yellow";
+   ctx.fillRect(50, 50, 100, 100);
+   ctx.rotate(0.1);//angle
+   ctx.fillRect(200, 50, 100, 100);
+   ctx.fillRect(350, 50, 100, 100);
+
+}
+```
+
+### Output
+
+![Banner Image](github-content/example-7-1-output.png/)
+
+### Example 2
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+
+    </head>
+
+<body>
+
+ <canvas id="can1" width="500" height="500"></canvas>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#can1 {
+
+    background: white;
+      border:1px solid black;
+}
+
+body {
+
+    background-color:#666;
+   margin: 40px;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = draw;
+
+function draw() {
+
+    var ctx = document.getElementById("can1").getContext("2d");
+    ctx.fillStyle = "yellow";
+   ctx.fillRect(50, 50, 100, 100);
+   ctx.translate(20,50);//It takes x and y.We can also put -20 -50;
+   ctx.fillRect(200, 50, 100, 100);
+   ctx.fillRect(350, 50, 100, 100);
+
+}
+```
+
+### Output
+
+![Banner Image](github-content/example-7-2-output.png/)
+
+### Example 3
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+
+    </head>
+
+<body>
+
+ <canvas id="can1" width="500" height="500"></canvas>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#can1 {
+
+    background: white;
+      border:1px solid black;
+}
+
+body {
+
+    background-color:#666;
+   margin: 40px;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = draw;
+
+function draw() {
+
+    var ctx = document.getElementById("can1").getContext("2d");
+    ctx.fillStyle = "yellow";
+   ctx.fillRect(50, 50, 100, 100);
+    //transform(xScale,ySkew,xSkew,yScale,xTrans,yTrans).
+    //Default transform is matrix is (1,0,0,1,0,0).
+
+   ctx.transform(0.5, 0, 0, 0.5, 0, 0);
+   ctx.fillRect(500, 50, 100, 100);
+   ctx.fillRect(350, 50, 100, 100);
+
+}
+```
+
+### Output
+
+![Banner Image](github-content/example-7-3-output.png/)
+
+### Example 4
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+
+    </head>
+
+<body>
+
+ <canvas id="can1" width="500" height="500"></canvas>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#can1 {
+
+    background: white;
+      border:1px solid black;
+}
+
+body {
+
+    background-color:#666;
+   margin: 40px;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = draw;
+
+function draw() {
+
+    var ctx = document.getElementById("can1").getContext("2d");
+    ctx.fillStyle = "yellow";
+   ctx.fillRect(50, 50, 100, 100);
+    //transform(xScale,ySkew,xSkew,yScale,xTrans,yTrans).
+    //Default transform is matrix is (1,0,0,1,0,0).
+
+   ctx.transform(1, 0.3, 0, 1, 0, 0);//This is ySkew transform.
+   ctx.fillRect(200, 50, 100, 100);
+   ctx.fillRect(350, 50, 100, 100);
+
+}
+```
+
+### Output
+
+![Banner Image](github-content/example-7-4-output.png/)
+
+### Example 5
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+
+    </head>
+
+<body>
+
+ <canvas id="can1" width="500" height="500"></canvas>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#can1 {
+
+    background: white;
+      border:1px solid black;
+}
+
+body {
+
+    background-color:#666;
+   margin: 40px;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = draw;
+
+function draw() {
+
+    var ctx = document.getElementById("can1").getContext("2d");
+    ctx.fillStyle = "yellow";
+   ctx.fillRect(50, 50, 100, 100);
+    //transform(xScale,ySkew,xSkew,yScale,xTrans,yTrans).
+    //Default transform is matrix is (1,0,0,1,0,0).
+
+   ctx.transform(1, 0, 0.3, 1, 0, 0);//This is xSkew transform.
+   ctx.fillRect(200, 50, 100, 100);
+   ctx.fillRect(350, 50, 100, 100);
+
+}
+```
+
+### Output
+
+![Banner Image](github-content/example-7-5-output.png/)
+
+### Example 6
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+
+    </head>
+
+<body>
+
+ <canvas id="can1" width="500" height="500"></canvas>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#can1 {
+
+    background: white;
+      border:1px solid black;
+}
+
+body {
+
+    background-color:#666;
+   margin: 40px;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = draw;
+
+function draw() {
+
+    var ctx = document.getElementById("can1").getContext("2d");
+    ctx.fillStyle = "yellow";
+   ctx.fillRect(50, 50, 100, 100);
+    //transform(xScale,ySkew,xSkew,yScale,xTrans,yTrans).
+    //Default transform is matrix is (1,0,0,1,0,0).
+
+   ctx.transform(1, 0, 0, 1, 30, 20);//This is Translate.We can use -30 and -20.
+   ctx.fillRect(200, 50, 100, 100);
+   ctx.fillRect(350, 50, 100, 100);
+
+}
+```
+
+### Output
+
+![Banner Image](github-content/example-7-6-output.png/)
+
+### Example 7
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+
+    </head>
+
+<body>
+
+ <canvas id="can1" width="500" height="500"></canvas>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#can1 {
+
+    background: white;
+      border:1px solid black;
+}
+
+body {
+
+    background-color:#666;
+   margin: 40px;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = draw;
+
+function draw() {
+
+    var ctx = document.getElementById("can1").getContext("2d");
+    //transform(xScale,ySkew,xSkew,yScale,xTrans,yTrans).
+    //Default transform is matrix is (1,0,0,1,0,0).
+    ctx.fillStyle = "yellow";
+
+    ctx.setTransform(1, 0, 0.5, 1, 0, 0)
+    ctx.fillRect(20, 20, 100, 100);
+    ctx.setTransform(1, 0.5, 0, 1, 0, 0)
+    ctx.fillRect(100, 80, 100, 100);
+}
+
+//by using setTransform method we can set the transform effects.but if you only put the transfrom effect it will set the effects for all canvases.
+```
+
+### Output
+
+![Banner Image](github-content/example-7-7-output.png/)
