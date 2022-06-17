@@ -2063,3 +2063,1269 @@ function draw() {
 ### Output
 
 ![Banner Image](github-content/example-7-7-output.png/)
+
+## 9. Pixel Manipulation Snippets
+
+### Example 0
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+
+    </head>
+
+<body>
+
+ <canvas id="can1" width="500" height="500"></canvas>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#can1 {
+
+    background: white;
+      border:1px solid black;
+}
+
+body {
+
+    background-color:#666;
+   margin: 40px;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = draw;
+
+function draw() {
+
+    var ctx = document.getElementById("can1").getContext("2d");
+    ctx.fillStyle = "magenta";
+    ctx.fillRect(20, 20, 100, 100);
+    ctx.fillStyle = "blue";
+    ctx.fillRect(40, 40, 100, 100);
+    var src = ctx.getImageData(20, 20, 50, 50)//(x,y,w,h).This line of code get the image form the canvas.
+    ctx.putImageData(src, 280, 25);//The putImageData is use to paste the image.
+
+}
+```
+
+### Output
+
+![Banner Image](github-content/example-8-0-output.png/)
+
+### Example 1
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+
+    </head>
+
+<body>
+
+ <canvas id="can1" width="500" height="500"></canvas>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#can1 {
+
+    background: white;
+      border:1px solid black;
+}
+
+body {
+
+    background-color:#666;
+   margin: 40px;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = draw;
+
+function draw() {
+
+    var ctx = document.getElementById("can1").getContext("2d");
+    ctx.fillStyle = "magenta";
+    ctx.fillRect(20, 20, 100, 100);
+    ctx.fillStyle = "blue";
+    ctx.fillRect(40, 40, 100, 100);
+    var src = ctx.getImageData(20, 20, 50, 50)//(x,y,w,h).This line of code get the image form the canvas.
+    var copy = ctx.createImageData(src.width, src.height)//we can also put 50 50 or we can put ony src it will automatically get the width and height.
+
+    for (var i = 0; i < copy.data.length; i++) {//data returns the rgb value 0 to 255.
+
+        copy.data[i] = src.data[i];//It takes the src data rgb and put it in the copy data.
+
+    }
+    ctx.putImageData(copy, 250, 20);
+
+}
+//This is another way to get Image.
+
+
+```
+
+### Output
+
+![Banner Image](github-content/example-8-1-output.png/)
+
+### Example 2
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+
+    </head>
+
+<body>
+
+ <canvas id="can1" width="500" height="500"></canvas>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#can1 {
+
+    background: white;
+      border:1px solid black;
+}
+
+body {
+
+    background-color:#666;
+   margin: 40px;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = draw;
+
+function draw() {
+
+    var ctx = document.getElementById("can1").getContext("2d");
+    ctx.fillStyle = "magenta";
+    ctx.fillRect(20, 20, 100, 100);
+    ctx.fillStyle = "blue";
+    ctx.fillRect(40, 40, 100, 100);
+    var src = ctx.getImageData(20, 20, 50, 50)//(x,y,w,h).This line of code get the image form the canvas.
+    var copy = ctx.createImageData(src.width, src.height)//we can also put 50 50.
+
+    copy.data.set(src.data);//But this method won't work in internet explorer.
+    ctx.putImageData(copy, 250, 20);
+
+}
+//This is another way to get Image.
+```
+
+### Output
+
+![Banner Image](github-content/example-8-2-output.png/)
+
+## 10. Compositing Snippets
+
+### Example 0
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+
+    </head>
+
+<body>
+
+ <canvas id="can1" width="500" height="500"></canvas>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#can1 {
+
+    background: white;
+      border:1px solid black;
+}
+
+body {
+
+    background-color:#666;
+   margin: 40px;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = draw;
+
+function draw() {
+
+    var ctx = document.getElementById("can1").getContext("2d");
+    ctx.fillStyle = "magenta";
+    ctx.fillRect(20, 20, 100, 100);
+    ctx.fillStyle = "blue";
+    ctx.globalAlpha = 0.5;
+    ctx.fillRect(40, 40, 100, 100);
+
+}
+```
+
+### Output
+
+![Banner Image](github-content/example-9-0-output.png/)
+
+### Example 1
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+
+    </head>
+
+<body>
+
+ <canvas id="can1" width="500" height="500"></canvas>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#can1 {
+
+    background: white;
+      border:1px solid black;
+}
+
+body {
+
+    background-color:#666;
+   margin: 40px;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = draw;
+
+function draw() {
+	var ctx = document.getElementById("can1").getContext("2d");
+
+    //globalAlpha=0.0 to 1.0.
+
+	ctx.fillStyle = "magenta";
+    ctx.globalAlpha = 0.6;
+    ctx.fillRect(20, 20, 100, 100);
+    ctx.fillStyle = "blue";
+    ctx.fillRect(40, 40, 100, 100);
+
+}
+```
+
+### Output
+
+![Banner Image](github-content/example-9-1-output.png/)
+
+### Example 2
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+
+    </head>
+
+<body>
+
+ <canvas id="can1" width="500" height="500"></canvas>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#can1 {
+
+    background: white;
+      border:1px solid black;
+}
+
+body {
+
+    background-color:#666;
+   margin: 40px;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = draw;
+
+function draw() {
+
+    var ctx = document.getElementById("can1").getContext("2d");
+
+    //globalAlpha 0.0 to 1.0.
+    //globalCompositeOperation= source-atop || source-in || source-out || source-over(default) || destination-atop || destination-in || destination-out
+    //destination-over || lighter || copy || xor.
+
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = "magenta";
+    ctx.fillRect(20, 20, 100, 100);
+
+    ctx.fillStyle = "blue";
+    ctx.fillRect(40, 40, 100, 100);
+
+    ctx.fillStyle = "magenta";
+    ctx.fillRect(250, 20, 100, 100);
+
+    ctx.globalCompositeOperation = "source-atop";
+
+    ctx.fillStyle = "blue";
+    ctx.fillRect(270, 40, 100, 100);
+
+}
+
+//globalCompositeOperation is use to make a lot of effects.But make sure to put it between two or more canvases.
+```
+
+### Output
+
+![Banner Image](github-content/example-9-2-output.png/)
+
+### Example 3
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+
+    </head>
+
+<body>
+
+ <canvas id="can1" width="500" height="500"></canvas>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#can1 {
+
+    background: white;
+      border:1px solid black;
+}
+
+body {
+
+    background-color:#666;
+   margin: 40px;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = draw;
+
+function draw() {
+
+    var ctx = document.getElementById("can1").getContext("2d");
+
+    //globalAlpha 0.0 to 1.0.
+    //globalCompositeOperation= source-atop || source-in || source-out || source-over(default) || destination-atop || destination-in || destination-out
+    //destination-over || lighter || copy || xor.
+
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = "magenta";
+    ctx.fillRect(20, 20, 100, 100);
+
+    ctx.fillStyle = "blue";
+    ctx.fillRect(40, 40, 100, 100);
+
+    ctx.fillStyle = "magenta";
+    ctx.fillRect(250, 20, 100, 100);
+
+    ctx.globalCompositeOperation = "source-in";
+
+    ctx.fillStyle = "blue";
+    ctx.fillRect(270, 40, 100, 100);
+
+}
+
+//globalCompositeOperation is use to make a lot of effects.But make sure to put it between two or more canvases.
+```
+
+### Output
+
+![Banner Image](github-content/example-9-3-output.png/)
+
+### Example 4
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+
+    </head>
+
+<body>
+
+ <canvas id="can1" width="500" height="500"></canvas>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#can1 {
+
+    background: white;
+      border:1px solid black;
+}
+
+body {
+
+    background-color:#666;
+   margin: 40px;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = draw;
+
+function draw() {
+
+    var ctx = document.getElementById("can1").getContext("2d");
+
+    //globalAlpha 0.0 to 1.0.
+    //globalCompositeOperation= source-atop || source-in || source-out || source-over(default) || destination-atop || destination-in || destination-out
+    //destination-over || lighter || copy || xor.
+
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = "magenta";
+    ctx.fillRect(20, 20, 100, 100);
+
+    ctx.fillStyle = "blue";
+    ctx.fillRect(40, 40, 100, 100);
+
+    ctx.fillStyle = "magenta";
+    ctx.fillRect(250, 20, 100, 100);
+
+    ctx.globalCompositeOperation = "source-out";
+
+    ctx.fillStyle = "blue";
+    ctx.fillRect(270, 40, 100, 100);
+
+}
+
+//globalCompositeOperation is use to make a lot of effects.But make sure to put it between two or more canvases.
+```
+
+### Output
+
+![Banner Image](github-content/example-9-4-output.png/)
+
+### Example 5
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+
+    </head>
+
+<body>
+
+ <canvas id="can1" width="500" height="500"></canvas>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#can1 {
+
+    background: white;
+      border:1px solid black;
+}
+
+body {
+
+    background-color:#666;
+   margin: 40px;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = draw;
+
+function draw() {
+
+    var ctx = document.getElementById("can1").getContext("2d");
+
+    //globalAlpha 0.0 to 1.0.
+    //globalCompositeOperation= source-atop || source-in || source-out || source-over(default) || destination-atop || destination-in || destination-out
+    //destination-over || lighter || copy || xor.
+
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = "magenta";
+    ctx.fillRect(20, 20, 100, 100);
+
+    ctx.fillStyle = "blue";
+    ctx.fillRect(40, 40, 100, 100);
+
+    ctx.fillStyle = "magenta";
+    ctx.fillRect(250, 20, 100, 100);
+
+    ctx.globalCompositeOperation = "source-over";//This is default.
+
+    ctx.fillStyle = "blue";
+    ctx.fillRect(270, 40, 100, 100);
+
+}
+
+//globalCompositeOperation is use to make a lot of effects.But make sure to put it between two or more canvases.
+```
+
+### Output
+
+![Banner Image](github-content/example-9-5-output.png/)
+
+### Example 6
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+
+    </head>
+
+<body>
+
+ <canvas id="can1" width="500" height="500"></canvas>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#can1 {
+
+    background: white;
+      border:1px solid black;
+}
+
+body {
+
+    background-color:#666;
+   margin: 40px;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = draw;
+
+function draw() {
+
+    var ctx = document.getElementById("can1").getContext("2d");
+
+    //globalAlpha 0.0 to 1.0.
+    //globalCompositeOperation= source-atop || source-in || source-out || source-over(default) || destination-atop || destination-in || destination-out
+    //destination-over || lighter || copy || xor.
+
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = "magenta";
+    ctx.fillRect(20, 20, 100, 100);
+
+    ctx.fillStyle = "blue";
+    ctx.fillRect(40, 40, 100, 100);
+
+    ctx.fillStyle = "magenta";
+    ctx.fillRect(250, 20, 100, 100);
+
+    ctx.globalCompositeOperation = "destination-atop";
+
+    ctx.fillStyle = "blue";
+    ctx.fillRect(270, 40, 100, 100);
+
+}
+
+//globalCompositeOperation is use to make a lot of effects.But make sure to put it between two or more canvases.
+```
+
+### Output
+
+![Banner Image](github-content/example-9-6-output.png/)
+
+### Example 7
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+
+    </head>
+
+<body>
+
+ <canvas id="can1" width="500" height="500"></canvas>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#can1 {
+
+    background: white;
+      border:1px solid black;
+}
+
+body {
+
+    background-color:#666;
+   margin: 40px;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = draw;
+
+function draw() {
+
+    var ctx = document.getElementById("can1").getContext("2d");
+
+    //globalAlpha 0.0 to 1.0.
+    //globalCompositeOperation= source-atop || source-in || source-out || source-over(default) || destination-atop || destination-in || destination-out
+    //destination-over || lighter || copy || xor.
+
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = "magenta";
+    ctx.fillRect(20, 20, 100, 100);
+
+    ctx.fillStyle = "blue";
+    ctx.fillRect(40, 40, 100, 100);
+
+    ctx.fillStyle = "magenta";
+    ctx.fillRect(250, 20, 100, 100);
+
+    ctx.globalCompositeOperation = "destination-in";
+
+    ctx.fillStyle = "blue";
+    ctx.fillRect(270, 40, 100, 100);
+
+}
+
+//globalCompositeOperation is use to make a lot of effects.But make sure to put it between two or more canvases.
+```
+
+### Output
+
+![Banner Image](github-content/example-9-7-output.png/)
+
+### Example 8
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+
+    </head>
+
+<body>
+
+ <canvas id="can1" width="500" height="500"></canvas>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#can1 {
+
+    background: white;
+      border:1px solid black;
+}
+
+body {
+
+    background-color:#666;
+   margin: 40px;
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = draw;
+
+function draw() {
+
+    var ctx = document.getElementById("can1").getContext("2d");
+
+    //globalAlpha 0.0 to 1.0.
+    //globalCompositeOperation= source-atop || source-in || source-out || source-over(default) || destination-atop || destination-in || destination-out
+    //destination-over || lighter || copy || xor.
+
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = "magenta";
+    ctx.fillRect(20, 20, 100, 100);
+
+    ctx.fillStyle = "blue";
+    ctx.fillRect(40, 40, 100, 100);
+
+    ctx.fillStyle = "magenta";
+    ctx.fillRect(250, 20, 100, 100);
+
+    ctx.globalCompositeOperation = "destination-out";
+
+    ctx.fillStyle = "blue";
+    ctx.fillRect(270, 40, 100, 100);
+
+}
+
+//globalCompositeOperation is use to make a lot of effects.But make sure to put it between two or more canvases.
+```
+
+### Output
+
+![Banner Image](github-content/example-9-8-output.png/)
+
+### Example 9
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+
+    </head>
+
+<body>
+
+ <canvas id="can1" width="500" height="500"></canvas>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#can1 {
+
+    background: white;
+      border:1px solid black;
+}
+
+body {
+
+    background-color:#666;
+   margin: 40px;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = draw;
+
+function draw() {
+
+    var ctx = document.getElementById("can1").getContext("2d");
+
+    //globalAlpha 0.0 to 1.0.
+    //globalCompositeOperation= source-atop || source-in || source-out || source-over(default) || destination-atop || destination-in || destination-out
+    //destination-over || lighter || copy || xor.
+
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = "magenta";
+    ctx.fillRect(20, 20, 100, 100);
+
+    ctx.fillStyle = "blue";
+    ctx.fillRect(40, 40, 100, 100);
+
+    ctx.fillStyle = "magenta";
+    ctx.fillRect(250, 20, 100, 100);
+
+    ctx.globalCompositeOperation = "destination-over";
+
+    ctx.fillStyle = "blue";
+    ctx.fillRect(270, 40, 100, 100);
+
+}
+//globalCompositeOperation is use to make a lot of effects.But make sure to put it between two or more canvases.
+```
+
+### Output
+
+![Banner Image](github-content/example-9-9-output.png/)
+
+### Example 10
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+
+    </head>
+
+<body>
+
+ <canvas id="can1" width="500" height="500"></canvas>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#can1 {
+
+    background: white;
+      border:1px solid black;
+}
+
+body {
+
+    background-color:#666;
+   margin: 40px;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = draw;
+
+function draw() {
+
+    var ctx = document.getElementById("can1").getContext("2d");
+
+    //globalAlpha 0.0 to 1.0.
+    //globalCompositeOperation= source-atop || source-in || source-out || source-over(default) || destination-atop || destination-in || destination-out
+    //destination-over || lighter || copy || xor.
+
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = "magenta";
+    ctx.fillRect(20, 20, 100, 100);
+
+    ctx.fillStyle = "blue";
+    ctx.fillRect(40, 40, 100, 100);
+
+    ctx.fillStyle = "magenta";
+    ctx.fillRect(250, 20, 100, 100);
+
+    ctx.globalCompositeOperation = "lighter";
+
+    ctx.fillStyle = "blue";
+    ctx.fillRect(270, 40, 100, 100);
+
+}
+
+//globalCompositeOperation is use to make a lot of effects.But make sure to put it between two or more canvases.
+```
+
+### Output
+
+![Banner Image](github-content/example-9-10-output.png/)
+
+### Example 11
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+
+    </head>
+
+<body>
+
+ <canvas id="can1" width="500" height="500"></canvas>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#can1 {
+
+    background: white;
+      border:1px solid black;
+}
+body {
+
+    background-color:#666;
+   margin: 40px;
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = draw;
+
+function draw() {
+
+    var ctx = document.getElementById("can1").getContext("2d");
+
+    //globalAlpha 0.0 to 1.0.
+    //globalCompositeOperation= source-atop || source-in || source-out || source-over(default) || destination-atop || destination-in || destination-out
+    //destination-over || lighter || copy || xor.
+
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = "magenta";
+    ctx.fillRect(20, 20, 100, 100);
+
+    ctx.fillStyle = "blue";
+    ctx.fillRect(40, 40, 100, 100);
+
+    ctx.fillStyle = "magenta";
+    ctx.fillRect(250, 20, 100, 100);
+
+    ctx.globalCompositeOperation = "copy";
+
+    ctx.fillStyle = "blue";
+    ctx.fillRect(270, 40, 100, 100);
+
+}
+//globalCompositeOperation is use to make a lot of effects.But make sure to put it between two or more canvases.
+```
+
+### Output
+
+![Banner Image](github-content/example-9-11-output.png/)
+
+### Example 12
+
+#### HTML
+
+```HTML
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>This is the title</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+
+    </head>
+
+<body>
+
+ <canvas id="can1" width="500" height="500"></canvas>
+
+    <script src="js.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+```
+
+#### CSS
+
+```CSS
+#can1 {
+
+    background: white;
+      border:1px solid black;
+}
+
+body {
+
+    background-color:#666;
+   margin: 40px;
+
+}
+```
+
+#### JavaScript
+
+```JavaScript
+window.onload = draw;
+
+function draw() {
+
+    var ctx = document.getElementById("can1").getContext("2d");
+
+    //globalAlpha 0.0 to 1.0.
+    //globalCompositeOperation= source-atop || source-in || source-out || source-over(default) || destination-atop || destination-in || destination-out
+    //destination-over || lighter || copy || xor.
+
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = "magenta";
+    ctx.fillRect(20, 20, 100, 100);
+
+    ctx.fillStyle = "blue";
+    ctx.fillRect(40, 40, 100, 100);
+
+    ctx.fillStyle = "magenta";
+    ctx.fillRect(250, 20, 100, 100);
+
+    ctx.globalCompositeOperation = "xor";
+
+    ctx.fillStyle = "blue";
+    ctx.fillRect(270, 40, 100, 100);
+
+}
+//globalCompositeOperation is use to make a lot of effects.But make sure to put it between two or more canvases.
+```
+
+### Output
+
+![Banner Image](github-content/example-9-12-output.png/)
