@@ -20,7 +20,15 @@ JavaScript is a dynamic computer programming language. It is lightweight and mos
 10. [Cookie Snippets](9-cookie-snippets/)
 11. [Canvas Introduction Snippets](10-canvas-introduction-snippets/)
 12. [Canvas Adam Khoury Bootcamp Snippets](11-canvas-adam-khoury-bootcamp-snippets/)
-
+13. [Ajax The New Bonston Snippets](12-ajax-the-new-bonston-snippets/)
+14. [Regular Expression Snippets](13-regular-expression-snippets/)
+15. [DOM Snippets](14-dom-snippets/)
+16. [FunFun Function Snippets](15-funfun-function-snippets/)
+17. [Functional Programming Snippets](16-functional-programming-snippets/)
+18. [JavaScript Testing Snippets](17-javascript-testing-snippets/)
+19. [JavaScript OOP Concept Snippets](18-javascript-opp-concept-snippets/)
+20. [Jump Start Snippets](19-jump-start-snippets/)
+21. [JavaScipt Best Tutorial Snippets](20-javascipt-best-tutorial-snippets/)
 
 Social Media Links
 ---
