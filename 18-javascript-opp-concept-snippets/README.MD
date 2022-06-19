@@ -1,6 +1,5 @@
 ## JavaScript OOP Concept Snippets
 
-1. [Udacity OOP Snippets](1-udacity-oop-snippets/)
-2. [Derek Banas Snippets](2-derek-banas-snippets/)
-3. [OOP Design Partterns Snippets](3-oop-design-partterns-snippets/)
-4. [Other OOP Snippets](4-other-oop-snippets/)
+1. [Derek Banas Snippets](1-derek-banas-snippets/)
+2. [OOP Design Partterns Snippets](2-oop-design-partterns-snippets/)
+3. [Other OOP Snippets](3-other-oop-snippets/)
