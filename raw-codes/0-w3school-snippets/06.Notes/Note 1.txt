@@ -1,4 +1,0 @@
-*In Javascript window is the root object
-*That's why we don't need to type window before the other keywords.
-*We could also type window.document.
-*document is the object that contains everything in the webpage.within <html></html>
