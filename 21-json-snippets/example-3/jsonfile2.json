@@ -1,0 +1,27 @@
+[
+
+    {
+        "name": "Joker",
+        "age": "20",
+        "ambition": "Eletronic Engineer"
+
+
+    }, 
+	{
+
+        "name": "Hacker",
+        "age": "25",
+        "ambition": "Computer Engineer"
+
+
+    },
+	{
+
+        "name": "Maker",
+        "age": "19",
+        "ambition": "Cvil Engineer"
+
+
+    }
+
+]

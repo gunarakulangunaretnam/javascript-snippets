@@ -1,0 +1,27 @@
+[
+
+    {
+        "name": "kuna",
+        "age": "20",
+        "ambition": "Software Engineer"
+
+
+    }, 
+	{
+
+        "name": "Emaldon",
+        "age": "25",
+        "ambition": "Network Engineer"
+
+
+    },
+	{
+
+        "name": "Joy",
+        "age": "19",
+        "ambition": "Mutimedia Engineer"
+
+
+    }
+
+]
