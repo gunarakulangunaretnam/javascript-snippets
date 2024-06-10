@@ -1,4 +1,4 @@
-# JAVASCRIPT SNIPPETS CODES
+# JavaScript Snippets 
 
 ## Introduction
 
@@ -32,7 +32,7 @@ JavaScript is a dynamic computer programming language. It is lightweight and mos
 22. [JSON Snippets](21-json-snippets/)
 
 
-# CONTACT
+# Contact
 
 ### Website: 
 
